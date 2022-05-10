@@ -13,9 +13,9 @@ $packageArgs = @{
 
   softwareName  = 'eask*'
 
-  checksum      = ''
+  checksum      = '721AC91BF248D69C98538BA4C90AC7C804D5F3E0BFFAB15F6986067D2F3446CB'
   checksumType  = 'sha256'
-  checksum64    = ''
+  checksum64    = '721AC91BF248D69C98538BA4C90AC7C804D5F3E0BFFAB15F6986067D2F3446CB'
   checksumType64= 'sha256'
 
   # MSI

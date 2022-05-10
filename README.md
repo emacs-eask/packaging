@@ -15,7 +15,7 @@ _Note:_ Make sure you install checksum (`choco install checksum`) and calculate 
 
 Use the `checksum` tool to calculate the sha256 checksum for each of the zip files from the eask releases:
 
-`C:\DirectoryWhereeaskZipIsAt>checksum -f=".\eask_0.25.1_Windows-32bit.zip" -t=sha256`
+`C:\DirectoryWhereeaskZipIsAt>checksum -f=".\eask_0.6.17_win-x64.zip" -t=sha256`
 
 ## Build the package
 
