@@ -1,5 +1,7 @@
 ﻿# chocolatey-eask
 
+https://community.chocolatey.org/packages/eask
+
 Chocolatey install for eask
 
 ## Modifying the package
