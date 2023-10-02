@@ -49,7 +49,7 @@ After executing the uninstall ensure that `eask.exe` is not found in the Chocolo
 ## Publish the package to the Chocolatey community feed repository:
 
 - `choco apikey -k [API_KEY_HERE] -source https://push.chocolatey.org/`
-- `choco push eask.[version num].nupkg -s https://push.chocolatey.org/` (package name can be omitted)
+- `choco push eask-cli.[version num].nupkg -s https://push.chocolatey.org/` (package name can be omitted)
 
 See the [Chocolatey Packages Quick Start][quickstart] for more information.
 
