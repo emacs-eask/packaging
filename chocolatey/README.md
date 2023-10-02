@@ -6,7 +6,7 @@ Chocolatey install for Eask CLI
 
 - Edit the `eask-cli.nuspec` configuration file.
 - Edit the `./tools/chocolateyInstall.ps1` install script
-~~- Edit the `./tools/chocolateyUninstall.ps1` uninstall script~~
+- ~~Edit the `./tools/chocolateyUninstall.ps1` uninstall script~~
 - You **must** save your files with *UTF-8* character encoding without BOM.
 
 _Note:_ Make sure you install checksum (`choco install checksum`) and calculate checksums for the 32bit and 64bit copies of eask in the [Install-ChocolateyZipPackage](https://chocolatey.org/docs/helpers-install-chocolatey-zip-package) command of the `chocolateyInstall.ps1` file.
