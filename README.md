@@ -8,7 +8,7 @@
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 
 #### Chocolatey
-> https://community.chocolatey.org/packages/eask
+> https://community.chocolatey.org/packages/eask-cli
 
 #### Scoop
 > WIP
