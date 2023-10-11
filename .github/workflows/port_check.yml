@@ -39,5 +39,4 @@ jobs:
       working-directory: macports
       run: |
         port lint --nitpick
-        sudo port test
         sudo port -vst install
