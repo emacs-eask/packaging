@@ -33,5 +33,5 @@ jobs:
 
     - name: Try install
       run: |
-        brew tap https://github.com/emacs-eask/packaging
+        brew tap emacs-eask/cli https://github.com/emacs-eask/packaging
         brew install eask-cli
