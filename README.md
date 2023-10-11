@@ -14,7 +14,7 @@
 > WIP
 
 #### Homebrew
-> WIP
+> https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
 #### MacPorts
 > WIP
