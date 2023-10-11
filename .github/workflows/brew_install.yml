@@ -27,17 +27,9 @@ jobs:
         os: [macos-latest]
 
     steps:
-    - uses: actions/checkout@v4
-
     - name: Install Homebrew
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    - name: Checksum
-      run: |
-        brew install coreutils
-        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-x64.zip --output ~/eask_0.8.3_macos-x64.zip
-        shasum -a 256 ~/eask_0.8.3_macos-x64.zip
 
     - name: Try install
       run: |
