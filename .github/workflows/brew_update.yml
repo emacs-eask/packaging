@@ -1,0 +1,49 @@
+name: Brew Update
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'Formula/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron:  '0 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+
+    steps:
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - uses: actions/checkout@v4
+
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.1
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - name: Update Formula
+      run: |
+        eask install-deps
+        eask run brew-update
