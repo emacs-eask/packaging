@@ -1,6 +1,6 @@
 cask "eask-cli" do
   arch arm: "arm64", intel: "x64"
-  sha256 ""
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   name: "Eask CLI"
   desc "A set of command-line tools to build Emacs packages"
