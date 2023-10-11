@@ -1,4 +1,4 @@
-cask "eask-cli" do
+class EaskCLI < Formula
   arch arm: "arm64", intel: "x64"
   sha256 arm:   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
          intel: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -10,4 +10,8 @@ cask "eask-cli" do
   license "GPLv3"
 
   url "https://github.com/emacs-eask/cli/releases/download/#{version}/eask_#{version}_macos-#{arch}.zip"
+
+  def install
+    bin.install "eask_#{version}_macos-#{arch}.zip"
+  end
 end
