@@ -31,10 +31,9 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    - name: Try install
+    - name: Install Eask CLI
       run: |
         brew tap emacs-eask/cli https://github.com/emacs-eask/packaging
-
-    - run: brew install eask-cli
+        brew install eask-cli
 
     - run: eask --version

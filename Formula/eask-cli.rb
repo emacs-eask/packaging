@@ -7,7 +7,7 @@ class EaskCli < Formula
   homepage "https://emacs-eask.github.io/"
   license "GPLv3"
 
-  url    "https://registry.npmjs.org/@emacs-eask/-/cli-#{version}.tgz"
+  url "https://registry.npmjs.org/@emacs-eask/-/cli-#{version}.tgz"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "node"
