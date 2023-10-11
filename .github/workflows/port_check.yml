@@ -39,4 +39,4 @@ jobs:
       working-directory: macports
       run: |
         port lint
-        port -vst install
+        sudo port -vst install
