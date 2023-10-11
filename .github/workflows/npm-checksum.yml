@@ -46,5 +46,5 @@ jobs:
     - name: Checksum (openssl)
       run: |
         brew install openssl
-        openssl dgst -sha160 ~/eask_${{ env.VERSION }}.zip
+        openssl dgst -rmd160 ~/eask_${{ env.VERSION }}.zip
         openssl dgst -sha256 ~/eask_${{ env.VERSION }}.zip
