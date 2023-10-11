@@ -20,10 +20,9 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     strategy:
       fail-fast: false
-      os: [ubuntu-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v4
