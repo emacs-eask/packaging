@@ -18,6 +18,7 @@
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
+[![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
 
 -  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
 

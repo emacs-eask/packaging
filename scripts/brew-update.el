@@ -6,7 +6,7 @@
 
 (let* ((response (cdr (github-tags "emacs-eask/cli")))
        (tags (plist-get response :names))
-       (latest (or "0.5.5" (car tags)))
+       (latest (car tags))
        (version)
        (beg) (end))
   (with-current-buffer (find-file "Formula/eask-cli.rb")
@@ -15,11 +15,15 @@
       (setq beg (1+ (point))
             end (1- (line-end-position))
             version (buffer-substring beg end))
-      (unless (string= version latest)
+      (when-let ((beg (1+ (point)))
+                 (end (1- (line-end-position)))
+                 (version (buffer-substring beg end))
+                 (_ (not (string= version latest))))
         (delete-region beg end)
         (forward-char 1)
-        (insert latest)))
-    (save-buffer)))
+        (insert latest)
+        (save-buffer)
+        (message "[INFO] Update Eask CLI to latest version %s" latest)))))
 
 ;; Local Variables:
 ;; coding: utf-8
