@@ -38,7 +38,13 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    - name: Checksum
+    - name: Checksum (shasum)
       run: |
         brew install coreutils
         shasum -a 256 ~/eask_${{ env.VERSION }}.zip
+
+    - name: Checksum (openssl)
+      run: |
+        brew install openssl
+        openssl dgst -sha160 ~/eask_${{ env.VERSION }}.zip
+        openssl dgst -sha256 ~/eask_${{ env.VERSION }}.zip
