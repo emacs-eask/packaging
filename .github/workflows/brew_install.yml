@@ -31,7 +31,7 @@ jobs:
 
     - name: Checksum
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-x64.zip ~/eask_0.8.3_macos-x64.zip
+        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-x64.zip --output ~/eask_0.8.3_macos-x64.zip
         checksum -a 256 ~/eask_0.8.3_macos-x64.zip
 
     - name: Install Homebrew
