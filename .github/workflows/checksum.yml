@@ -18,6 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  VERSION: 0.8.3
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -25,12 +28,15 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
+        target:
+        - macos-x64
+        - macos-arm64
 
     steps:
     - name: Download Binaries
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-x64.zip --output ~/eask_0.8.3_macos-x64.zip
-        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-arm64.zip --output ~/eask_0.8.3_macos-arm64.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
     - name: Install Homebrew
       run: |
