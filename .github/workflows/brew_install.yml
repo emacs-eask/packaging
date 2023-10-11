@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths:
+      - '**.yml'
       - 'Formula'
   pull_request:
     branches:
