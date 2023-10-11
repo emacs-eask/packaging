@@ -45,5 +45,4 @@ jobs:
     - name: Checksum
       run: |
         brew install coreutils
-        shasum -a 256 ~/eask_0.8.3_macos-x64.zip
-        shasum -a 256 ~/eask_0.8.3_macos-arm64.zip
+        shasum -a 256 ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
