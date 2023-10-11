@@ -6,7 +6,7 @@ on:
       - master
     paths:
       - '**.yml'
-      - 'Formula/**'
+      - 'macports/**'
   pull_request:
     branches:
       - master
@@ -17,6 +17,9 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  PKG: MacPorts-2.8.1-12-Monterey.pkg
 
 jobs:
   build:
@@ -32,8 +35,8 @@ jobs:
 
     - name: Install MacPorts
       run: |
-        wget https://github.com/macports/macports-base/releases/download/v2.7.1/MacPorts-2.7.1-11-BigSur.pkg
-        sudo installer -pkg ./MacPorts-2.7.1-11-BigSur.pkg -target /
+        wget https://github.com/macports/macports-base/releases/download/v2.8.1/${{ env.PKG }}
+        sudo installer -pkg ./${{ env.PKG }} -target /
 
     - name: Test
       working-directory: macports
