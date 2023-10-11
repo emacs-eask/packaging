@@ -48,3 +48,7 @@ jobs:
         brew install openssl
         openssl dgst -rmd160 ~/eask_${{ env.VERSION }}.zip
         openssl dgst -sha256 ~/eask_${{ env.VERSION }}.zip
+
+    - name: Size
+      run: |
+        stat -f%z ~/eask_${{ env.VERSION }}.zip
