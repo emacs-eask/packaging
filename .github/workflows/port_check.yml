@@ -35,8 +35,8 @@ jobs:
 
     - name: Install MacPorts
       run: |
-        wget https://github.com/macports/macports-base/releases/download/v2.8.1/${{ env.PKG }}
-        sudo installer -pkg ./${{ env.PKG }} -target /
+        curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci
+        source ./macports-ci install
 
     - name: Test
       working-directory: macports
