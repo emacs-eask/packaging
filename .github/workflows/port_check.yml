@@ -18,9 +18,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  PKG: MacPorts-2.8.1-12-Monterey.pkg
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
