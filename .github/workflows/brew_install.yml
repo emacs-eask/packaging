@@ -27,7 +27,17 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
-    - name: Install Homebrew
+    - name: Install Homebrew (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        apt-get update
+        apt-get install build-essential procps curl file git
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew doctor
+
+    - name: Install Homebrew (macOS)
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
