@@ -36,6 +36,7 @@ jobs:
       run: |
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew doctor
 
     - name: Install Eask CLI
       run: |
