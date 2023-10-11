@@ -1,0 +1,45 @@
+name: Checksum
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'Formula'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - name: Download Binaries
+      run: |
+        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-x64.zip --output ~/eask_0.8.3_macos-x64.zip
+        curl https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_macos-arm64.zip --output ~/eask_0.8.3_macos-arm64.zip
+
+    - name: Checksum
+      run: |
+        brew install coreutils
+        shasum -a 256 ~/eask_0.8.3_macos-x64.zip
+        shasum -a 256 ~/eask_0.8.3_macos-arm64.zip
