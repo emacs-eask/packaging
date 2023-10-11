@@ -28,15 +28,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
-        target:
-        - macos-x64
-        - macos-arm64
 
     steps:
     - name: Download Binaries
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz --output ~/eask_${{ env.VERSION }}.zip
 
     - name: Install Homebrew
       run: |
@@ -45,4 +41,4 @@ jobs:
     - name: Checksum
       run: |
         brew install coreutils
-        shasum -a 256 ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        shasum -a 256 ~/eask_${{ env.VERSION }}.zip
