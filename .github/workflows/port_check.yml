@@ -38,5 +38,6 @@ jobs:
     - name: Test
       working-directory: macports
       run: |
-        port lint
+        port lint --nitpick
+        sudo port test
         sudo port -vst install
