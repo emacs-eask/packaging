@@ -44,6 +44,11 @@ jobs:
         eask install-deps
         eask run brew-update
 
+    - name: Set git config
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
     - name: Commit
       continue-on-error: true
       run: |
