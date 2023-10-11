@@ -27,19 +27,15 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
-    - name: Install Homebrew (Ubuntu)
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - name: Setup Path
       if: matrix.os == 'ubuntu-latest'
       run: |
-        sudo apt-get update
-        sudo apt-get install build-essential
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        brew doctor
-
-    - name: Install Homebrew (macOS)
-      run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     - name: Install Eask CLI
       run: |
