@@ -13,8 +13,8 @@
 #### Scoop
 > WIP
 
-#### MacPorts
+#### Homebrew
 > WIP
 
-#### Homebrew
+#### MacPorts
 > WIP
