@@ -19,5 +19,7 @@
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
 
+-  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
+
 #### MacPorts
 > WIP
