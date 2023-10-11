@@ -1,0 +1,42 @@
+name: Port Check
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'Formula/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+        - macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install MacPorts
+      run: |
+        wget https://github.com/macports/macports-base/releases/download/v2.7.1/MacPorts-2.7.1-11-BigSur.pkg
+        sudo installer -pkg ./MacPorts-2.7.1-11-BigSur.pkg -target /
+
+    - name: Test
+      working-directory: macports
+      run: |
+        port lint
+        port -vst install

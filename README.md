@@ -24,3 +24,5 @@
 
 #### MacPorts
 > WIP
+
+- [bitwarden-cli/Portfile](https://github.com/macports/macports-ports/blob/551a0eb9eff6e29b5a91e4da314e6ff2fb6b01d1/security/bitwarden-cli/Portfile) - Use it as the reference!
