@@ -5,3 +5,16 @@ description: |
   Eask was built to be used as a package development tool in your Elisp packages.
   But now, it can be used as a dev tool for Elisp packages, dependency management
   for your configuration, or run elisp programs for all other purposes.
+
+confinement: classic
+
+apps:
+  eask-cli:
+    command: bin/eask
+
+parts:
+  eask-cli:
+    plugin: npm
+    npm-node-version: 16.17.1
+    npm-include-node: true
+    source: @emacs-eask/cli
