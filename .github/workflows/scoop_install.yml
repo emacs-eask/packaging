@@ -1,0 +1,40 @@
+name: Brew Install
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'bucket/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+        - windows-latest
+
+    steps:
+    - name: Install Scoop
+      run: |
+        irm get.scoop.sh | iex
+
+    - name: Install Eask CLI
+      run: |
+        scoop bucket add emacs-eask/cli https://github.com/emacs-eask/packaging
+        scoop install eask-cli
+
+    - run: eask --version

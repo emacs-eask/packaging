@@ -5,18 +5,18 @@
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/emacs-eask/eask/releases/download/0.8.3/eask_0.8.3_win-x64.zip",
-            "hash": "721AC91BF248D69C98538BA4C90AC7C804D5F3E0BFFAB15F6986067D2F3446CB"
+            "url": "https://github.com/emacs-eask/cli/releases/download/0.8.3/eask_0.8.3_win-x64.zip",
+            "hash": "D85B4741597FD5F4BAD1409474880A3B9972503AA3BF2E800473E46769498C22"
         }
     },
     "bin": "eask.exe",
     "checkver": {
-        "github": "https://github.com/emacs-eask/eask"
+        "github": "https://github.com/emacs-eask/cli"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/emacs-eask/eask/releases/download/$version/eask_$version_win-x64.zip"
+                "url": "https://github.com/emacs-eask/cli/releases/download/$version/eask_$version_win-x64.zip"
             }
         }
     }
