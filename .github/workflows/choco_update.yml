@@ -1,0 +1,66 @@
+name: Choco Update
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.el'
+      - '**.yml'
+      - 'chocolatey/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron:  '0 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.1
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - name: Update Formula
+      run: |
+        eask install-deps
+        eask run choco-update
+
+    - name: Set git config
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit
+      continue-on-error: true
+      run: |
+        git pull
+        git add .
+        git commit -m "Update Choco nuspec"
+
+    - name: Push updated formula
+      continue-on-error: true
+      uses: jcs090218/github-push-action@master
+      with:
+        branch: master
+        rebase: true
+        retry: 7
