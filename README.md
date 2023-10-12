@@ -9,7 +9,10 @@
 [![npm-checksum](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml)
 
 #### Snap
-> WIP
+> https://snapcraft.io/eask-cli
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
 
 #### Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
