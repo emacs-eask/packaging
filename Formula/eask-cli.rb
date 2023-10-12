@@ -2,7 +2,7 @@ require "language/node"
 
 class EaskCli < Formula
   desc "A set of command-line tools to build Emacs packages"
-  version "0.8.3"
+  version "0.1.0"
   homepage "https://emacs-eask.github.io/"
   license "GPLv3"
 
