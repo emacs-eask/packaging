@@ -6,7 +6,7 @@
 
 (let* ((response (cdr (github-tags "emacs-eask/cli")))
        (tags (plist-get response :names))
-       (latest (or "0.0.0" (car tags)))
+       (latest (car tags))
        (version)
        (beg) (end))
   (with-current-buffer (find-file "snap/snapcraft.yaml")
