@@ -17,6 +17,8 @@
 
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
+- [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
+
 #### Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
