@@ -37,6 +37,8 @@
 #### Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
+[![Choco Update](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml)
+
 #### Scoop
 > https://github.com/emacs-eask/packaging/blob/master/bucket/eask-cli.json
 
