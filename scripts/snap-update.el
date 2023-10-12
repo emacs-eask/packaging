@@ -1,4 +1,4 @@
-;;; scoop-update.el --- Update Scoop Bucket  -*- lexical-binding: t -*-
+;;; snap-update.el --- Update Snap snapcraft.yaml  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -6,14 +6,14 @@
 
 (let* ((response (cdr (github-tags "emacs-eask/cli")))
        (tags (plist-get response :names))
-       (latest (car tags))
+       (latest (or "0.0.0" (car tags)))
        (version)
        (beg) (end))
-  (with-current-buffer (find-file "bucket/eask-cli.json")
+  (with-current-buffer (find-file "snap/snapcraft.yaml")
     (goto-char (point-min))
-    (when (search-forward "\"version\": " nil t)
-      (when-let ((beg (1+ (point)))
-                 (end (- (line-end-position) 2))
+    (when (search-forward "version: " nil t)
+      (when-let ((beg (point))
+                 (end (line-end-position))
                  (version (buffer-substring beg end))
                  (_ (not (string= version latest)))
                  (new-content (string-replace version latest (buffer-string))))
@@ -26,4 +26,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; scoop-update.el ends here
+;;; snap-update.el ends here
