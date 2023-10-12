@@ -30,6 +30,7 @@
 > https://github.com/emacs-eask/packaging/blob/master/bucket/eask-cli.json
 
 [![Scoop Install](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml)
+[![Scoop Update](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml)
 
 #### Winget
 > WIP
