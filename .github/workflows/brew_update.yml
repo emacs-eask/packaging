@@ -55,4 +55,11 @@ jobs:
         git pull
         git add .
         git commit -m "Update Brew Formula"
-        git push
+
+    - name: Push updated packages
+      continue-on-error: true
+      uses: jcs090218/github-push-action@master
+      with:
+        branch: master
+        rebase: true
+        retry: 7
