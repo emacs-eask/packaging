@@ -1,4 +1,4 @@
-;;; brew-update.el --- Update Homebrew formula  -*- lexical-binding: t -*-
+;;; scoop-update.el --- Update Homebrew formula  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -6,14 +6,14 @@
 
 (let* ((response (cdr (github-tags "emacs-eask/cli")))
        (tags (plist-get response :names))
-       (latest (or "0.1.0" (car tags)))
+       (latest (car tags))
        (version)
        (beg) (end))
-  (with-current-buffer (find-file "Formula/eask-cli.rb")
+  (with-current-buffer (find-file "bucket/eask-cli.json")
     (goto-char (point-min))
-    (when (search-forward "version " nil t)
+    (when (search-forward "\"version\": " nil t)
       (when-let ((beg (1+ (point)))
-                 (end (1- (line-end-position)))
+                 (end (- (line-end-position) 2))
                  (version (buffer-substring beg end))
                  (_ (not (string= version latest)))
                  (new-content (string-replace version latest (buffer-string))))
@@ -26,4 +26,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; brew-update.el ends here
+;;; scoop-update.el ends here

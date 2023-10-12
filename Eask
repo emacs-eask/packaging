@@ -7,6 +7,7 @@
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
 (script "brew-update" "eask load scripts/brew-update.el")
+(script "scoop-update" "eask load scripts/scoop-update.el")
 
 (source 'gnu)
 (source 'melpa)
