@@ -6,6 +6,7 @@
 [![npm](https://img.shields.io/npm/v/@emacs-eask/cli?logo=npm&color=green)](https://www.npmjs.com/package/@emacs-eask/cli)
 [![npm-dt](https://img.shields.io/npm/dt/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
+
 [![npm-checksum](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml)
 
 #### Snap
@@ -13,6 +14,8 @@
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
+
+[![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
 #### Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
