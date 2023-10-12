@@ -23,7 +23,7 @@
 -  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
 
 #### MacPorts
-> WIP
+> https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
 
 [![Port Check](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml)
 
