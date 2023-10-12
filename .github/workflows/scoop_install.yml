@@ -29,8 +29,7 @@ jobs:
 
     steps:
     - name: Install Scoop
-      run: |
-        irm get.scoop.sh | iex
+      uses: MinoruSekine/setup-scoop@v1
 
     - name: Install Eask CLI
       run: |
