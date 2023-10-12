@@ -12,7 +12,9 @@
 > https://community.chocolatey.org/packages/eask-cli
 
 #### Scoop
-> WIP
+> https://github.com/emacs-eask/packaging/blob/master/bucket/eask-cli.json
+
+[![Scoop Install](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml)
 
 #### Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
