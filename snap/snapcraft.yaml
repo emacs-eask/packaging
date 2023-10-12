@@ -12,9 +12,3 @@ apps:
   eask-cli:
     command: bin/eask
 
-parts:
-  eask-cli:
-    plugin: npm
-    npm-node-version: 16.17.1
-    npm-include-node: true
-    source: @emacs-eask/cli
