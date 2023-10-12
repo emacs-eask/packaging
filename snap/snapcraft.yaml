@@ -12,3 +12,7 @@ apps:
   eask-cli:
     command: bin/eask
 
+parts:
+  eask-cli:
+    plugin: npm
+    source: https://github.com/emacs-eask/cli.git
