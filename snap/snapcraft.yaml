@@ -5,7 +5,7 @@ description: |
   Eask was built to be used as a package development tool in your Elisp packages.
   But now, it can be used as a dev tool for Elisp packages, dependency management
   for your configuration, or run elisp programs for all other purposes.
-license: GPLv3
+license: GPL-3.0
 
 base: core20
 confinement: classic
