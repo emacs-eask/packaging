@@ -1,12 +1,11 @@
 name: eask-cli
-version: 'master'
+version: 0.8.3
 summary: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
 description: |
   Eask was built to be used as a package development tool in your Elisp packages.
   But now, it can be used as a dev tool for Elisp packages, dependency management
   for your configuration, or run elisp programs for all other purposes.
 
-grade: stable
 confinement: strict
 
 apps:
