@@ -1,4 +1,4 @@
-﻿# chocolatey-eask
+﻿# chocolatey-eask-cli
 
 Chocolatey install for Eask CLI
 
