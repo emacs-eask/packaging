@@ -7,6 +7,7 @@ description: |
   for your configuration, or run elisp programs for all other purposes.
 license: GPLv3
 
+base: core20
 confinement: classic
 
 apps:
