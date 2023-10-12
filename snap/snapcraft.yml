@@ -17,4 +17,5 @@ apps:
 parts:
   eask-cli:
     plugin: nodejs
-    source: .
+    node-packages:
+      - @emacs-eask/cli
