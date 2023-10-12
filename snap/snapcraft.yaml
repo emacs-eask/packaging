@@ -6,7 +6,7 @@ description: |
   But now, it can be used as a dev tool for Elisp packages, dependency management
   for your configuration, or run elisp programs for all other purposes.
 
-confinement: strict
+confinement: classic
 
 apps:
   eask-cli:
@@ -15,6 +15,6 @@ apps:
 
 parts:
   eask-cli:
-    plugin: nodejs
+    plugin: npm
     node-packages:
       - @emacs-eask/cli
