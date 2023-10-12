@@ -15,4 +15,5 @@ apps:
 parts:
   eask-cli:
     plugin: npm
+    npm-node-version: 16.15.0
     source: https://github.com/emacs-eask/cli.git
