@@ -8,6 +8,9 @@
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-checksum](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml)
 
+#### Snap
+> WIP
+
 #### Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
