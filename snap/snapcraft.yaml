@@ -9,7 +9,7 @@ license: GPL-3.0
 
 grade: stable
 base: core20
-confinement: classic
+confinement: strict
 
 apps:
   eask-cli:
