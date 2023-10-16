@@ -9,6 +9,12 @@
 
 [![npm-checksum](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/npm-checksum.yml)
 
+#### APT
+> WIP
+
+- [Hosting your own PPA repository on GitHub](https://assafmo.github.io/2019/05/02/ppa-repo-hosted-on-github.html)
+- [assafmo/ppa](https://github.com/assafmo/ppa)
+
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
 
