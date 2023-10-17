@@ -19,9 +19,9 @@
       (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
     (cl-case type
-      (:sha256 (format "powershell scripts/filehash.ps1 %s SHA256" zip))
+      (:sha256 (format "certutil -hashfile %s SHA256" zip))
       (:rmd160 (format "powershell scripts/filehash.ps1 %s RIPEMD160" zip))
-      (:size   (format "powershell scripts/item.ps1 %s" zip))))))
+      (:size   (format "filesize %s -e=0" zip))))))
 
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
@@ -34,7 +34,10 @@
     (cl-case type
       ((or :sha256 :rmd160) (nth 1 (split-string output " ")))
       (:size                output)))
-   (elenv-windows output)))
+   (elenv-windows
+    (cl-case type
+      ((or :sha256 :rmd160) (nth 1 (split-string output "\n")))
+      (:size                (nth 0 (split-string output " ")))))))
 
 (let* ((ver (getenv "EASK_VER"))
        (zip (concat "~/" (getenv "EASK_ZIP")))
