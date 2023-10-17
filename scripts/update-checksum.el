@@ -19,9 +19,9 @@
       (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
     (cl-case type
-      (:sha256 (format "powershell Get-FileHash %s -Algorithm SHA256 | powershell select -ExpandProperty Hash" zip))
-      (:rmd160 (format "powershell Get-FileHash %s -Algorithm RIPEMD160 | powershell select -ExpandProperty Hash" zip))
-      (:size   (format "powershell Get-Item %s | powershell select -ExpandProperty Length" zip))))))
+      (:sha256 (format "scripts/filehash.ps1 %s SHA256" zip))
+      (:rmd160 (format "scripts/filehash.ps1 %s RIPEMD160" zip))
+      (:size   (format "scripts/item.ps1 %s" zip))))))
 
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
