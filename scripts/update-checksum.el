@@ -20,7 +20,7 @@
    (elenv-windows
     (cl-case type
       (:sha256 (format "certutil -hashfile %s SHA256" zip))
-      (:rmd160 (format "Not supported" zip))
+      (:rmd160 (format "echo Not supported" zip))
       (:size   (format "filesize %s -e=0" zip))))))
 
 (defun openssl-parse-output (type output)
@@ -40,7 +40,9 @@
       (:size                (nth 0 (split-string output " ")))))))
 
 (let* ((ver (getenv "EASK_VER"))
-       (zip (concat "~/" (getenv "EASK_ZIP")))
+       (zip (cond (elenv-windows
+                   (concat "%USERPROFILE%/" (getenv "EASK_ZIP")))
+                  (t (concat "~/" (getenv "EASK_ZIP")))))
        (dir (file-name-nondirectory zip))
        (parent (format "./checksum/%s/%s/" ver dir))
        (rmd160 (shell-command-to-string (openssl-command :rmd160 zip)))
