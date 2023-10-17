@@ -16,14 +16,17 @@
   "Return checksum zip path."
   (cl-case symbol
     (`npm (format "cli-%s.tgz" version))
-    (t (format "eask_%s_%s.zip" version arch))))
+    (t    (format "eask_%s_%s.zip" version arch))))
 
 (defun checksum-data (symbol version &optional arch)
   "Return checksum data from SYMBOL and eask's VERSION."
-  (let ((zip (checksum-zip symbol version arch)))
-    `( :sha256 ,(file-to-string (format "checksum/%s/%s/sha256" version zip))
-       :rmd160 ,(file-to-string (format "checksum/%s/%s/rmd160" version zip))
-       :size   ,(file-to-string (format "checksum/%s/%s/size" version zip)))))
+  (let* ((zip (checksum-zip symbol version arch))
+         (sha256 (format "checksum/%s/%s/sha256" version zip))
+         (rmd160 (format "checksum/%s/%s/rmd160" version zip))
+         (size   (format "checksum/%s/%s/size" version zip)))
+    `( :sha256 ,(string-trim (file-to-string sha256))
+       :rmd160 ,(string-trim (file-to-string rmd160))
+       :size   ,(string-trim (file-to-string size)))))
 
 ;; Local Variables:
 ;; coding: utf-8
