@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  VERSION: 0.8.4
+  VERSION: 0.8.6
 
 jobs:
   get-ubuntu:
