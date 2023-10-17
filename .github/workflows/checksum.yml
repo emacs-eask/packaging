@@ -31,7 +31,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
-      matrix:
         target:
         - linux-arm64
         - linux-x64
