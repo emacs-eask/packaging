@@ -160,10 +160,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Download Binaries (Target)
-      run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o $HOME\eask_${{ env.VERSION }}_${{ matrix.target }}.zip
-        Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
+    - uses: suisei-cn/actions-download-file@master
+      id: downloadfile  # Remember to give an ID if you need the output filename
+      name: Download the file
+      with:
+        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip 
+        target: $HOME
+
+    # - name: Download Binaries (Target)
+    #   run: |
+    #     curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o $HOME\eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+    #     Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
     - name: Expose binary path
       run: |
