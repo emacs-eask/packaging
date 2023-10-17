@@ -160,7 +160,7 @@ jobs:
     steps:
     - name: Download Binaries (Target)
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o %USERPROFILE%\AppData\Roaming\eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o $HOME\AppData\Roaming\eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}${{ matrix.target }}.zip"
 
     - name: Expose binary path
