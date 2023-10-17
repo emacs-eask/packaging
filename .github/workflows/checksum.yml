@@ -58,6 +58,14 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.1
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
     - uses: actions/checkout@v4
 
     - name: Update checksum info
