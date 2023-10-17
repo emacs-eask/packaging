@@ -10,34 +10,28 @@
    (elenv-macos
     (cl-case type
       (:sha256 (format "openssl dgst -sha256 %s" zip))
-      (:rmd160 (format "openssl dgst -rmd160 %s" zip))
-      (:size   (format "stat -f%%z %s" zip))))
+      (:rmd160 (format "openssl dgst -rmd160 %s" zip))))
    (elenv-linux
     (cl-case type
       (:sha256 (format "openssl dgst -sha256 %s" zip))
-      (:rmd160 (format "openssl dgst -rmd160 %s" zip))  ; XXX: This doesn't work!
-      (:size   (format "stat -c \"%%s\" %s" zip))))
+      (:rmd160 (format "openssl dgst -rmd160 %s" zip))))  ; XXX: This doesn't work!
    (elenv-windows
     (cl-case type
       (:sha256 (format "certutil -hashfile %s SHA256" zip))
-      (:rmd160 (format "echo Not supported" zip))
-      (:size   (format "filesize %s -e=0" zip))))))
+      (:rmd160 (format "echo Not supported" zip))))))
 
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
   (cond
    (elenv-macos
     (cl-case type
-      ((or :sha256 :rmd160) (nth 1 (split-string output " ")))
-      (:size                output)))
+      ((or :sha256 :rmd160) (nth 1 (split-string output " ")))))
    (elenv-linux
     (cl-case type
-      ((or :sha256 :rmd160) (nth 1 (split-string output " ")))
-      (:size                output)))
+      ((or :sha256 :rmd160) (nth 1 (split-string output " ")))))
    (elenv-windows
     (cl-case type
-      ((or :sha256 :rmd160) (nth 1 (split-string output "\n")))
-      (:size                (nth 0 (split-string output " ")))))))
+      ((or :sha256 :rmd160) (nth 1 (split-string output "\n")))))))
 
 (let* ((ver (getenv "EASK_VER"))
        (zip (cond (elenv-windows
@@ -49,8 +43,7 @@
        (rmd160 (openssl-parse-output :rmd160 rmd160))
        (sha256 (shell-command-to-string (openssl-command :sha256 zip)))
        (sha256 (openssl-parse-output :sha256 sha256))
-       (size   (shell-command-to-string (openssl-command :size zip)))
-       (size   (openssl-parse-output :size size)))
+       (size   (file-size zip)))
   (ignore-errors (make-directory parent t))
   (message "? %s %s" zip (file-exists-p zip))
   (message "sha256: %s" sha256)

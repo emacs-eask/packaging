@@ -10,6 +10,10 @@
 ;;
 ;;; Util
 
+(defun file-size (file)
+  "Return file's size."
+  (with-temp-buffer (insert-file-contents file) (buffer-size)))
+
 (defun file-to-string (file)
   "Return file's string."
   (with-temp-buffer (insert-file-contents file) (buffer-string)))

@@ -34,6 +34,8 @@ jobs:
         - linux-arm64
         - linux-x64
     steps:
+    - uses: actions/checkout@v4
+
     - name: Download Binaries (Target)
       run: |
         curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
@@ -50,8 +52,6 @@ jobs:
     - uses: emacs-eask/setup-eask@master
       with:
         version: 'snapshot'
-
-    - uses: actions/checkout@v4
 
     - name: Update checksum info
       run: |
@@ -93,6 +93,8 @@ jobs:
         - npm
 
     steps:
+    - uses: actions/checkout@v4
+
     - name: Download Binaries (NPM)
       if: matrix.target == 'npm'
       run: |
@@ -120,8 +122,6 @@ jobs:
     - uses: emacs-eask/setup-eask@master
       with:
         version: 'snapshot'
-
-    - uses: actions/checkout@v4
 
     - name: Update checksum info
       run: |
@@ -176,13 +176,6 @@ jobs:
     - uses: emacs-eask/setup-eask@master
       with:
         version: 'snapshot'
-
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-
-    - run: |
-        npm install -g @delucis/filesize-cli
 
     - name: Update checksum info
       run: |
