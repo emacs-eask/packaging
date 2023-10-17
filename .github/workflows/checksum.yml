@@ -162,15 +162,12 @@ jobs:
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
-      id: downloadfile
+      id: eask_zip
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
-        target: public/
 
     - name: Download Binaries (Target)
       run: |
-        ls $HOME
-        echo "The file is named ${{ steps.downloadfile.outputs.filename }}"
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
     - name: Expose binary path
