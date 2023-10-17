@@ -162,6 +162,7 @@ jobs:
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
+      id: downloadfile
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         target: ${HOME}
