@@ -170,6 +170,7 @@ jobs:
     - name: Download Binaries (Target)
       run: |
         ls $HOME
+        echo "The file is named ${{ steps.downloadfile.outputs.filename }}"
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
     - name: Expose binary path
