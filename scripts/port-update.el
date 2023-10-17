@@ -18,7 +18,7 @@
       (when-let ((beg (point))
                  (end (line-end-position))
                  (version (buffer-substring beg end))
-                 ;;(_ (not (string= version latest)))
+                 (_ (not (string= version latest)))
                  (new-content (string-replace version latest (buffer-string))))
         (erase-buffer)
         (insert new-content)
