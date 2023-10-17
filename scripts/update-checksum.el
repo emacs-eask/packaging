@@ -14,8 +14,8 @@
       (:size   (format "stat -f%%z %s" zip))))
    (elenv-linux
     (cl-case type
-      (:sha256 (format "sha256sum %s" zip))
-      (:rmd160 (format "openssl dgst -rmd160 %s" zip))
+      (:sha256 (format "openssl dgst -sha256 %s" zip))
+      (:rmd160 (format "openssl dgst -rmd160 %s" zip))  ; XXX: This doesn't work!
       (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
     (cl-case type
