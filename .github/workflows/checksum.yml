@@ -39,7 +39,6 @@ jobs:
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
       if: matrix.target != 'npm'
-      id: eask_zip
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
@@ -108,14 +107,12 @@ jobs:
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
       if: matrix.target == 'npm'
-      id: eask_zip
       with:
         url: https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
       if: matrix.target != 'npm'
-      id: eask_zip
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
@@ -188,7 +185,6 @@ jobs:
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
-      id: eask_zip
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
