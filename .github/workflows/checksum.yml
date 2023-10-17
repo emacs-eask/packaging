@@ -165,7 +165,7 @@ jobs:
       id: downloadfile
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
-        target: ${HOME}
+        target: public/
 
     - name: Download Binaries (Target)
       run: |
