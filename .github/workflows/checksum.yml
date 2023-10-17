@@ -38,7 +38,7 @@ jobs:
 
     - name: Download Binaries (Target)
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
 
     - name: Expose binary path
@@ -100,13 +100,13 @@ jobs:
     - name: Download Binaries (NPM)
       if: matrix.target == 'npm'
       run: |
-        curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz -o cli-${{ env.VERSION }}.tgz
+        curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz -o ~/cli-${{ env.VERSION }}.tgz
         echo "EASK_ZIP=cli-${{ env.VERSION }}.tgz" >> $GITHUB_ENV
 
     - name: Download Binaries (Target)
       if: matrix.target != 'npm'
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
 
     - name: Expose binary path
@@ -164,7 +164,7 @@ jobs:
 
     - name: Download Binaries (Target)
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
     - name: Expose binary path
@@ -180,7 +180,6 @@ jobs:
         version: 'snapshot'
 
     - name: Update checksum info
-      shell: pwsh
       run: |
         eask install-deps
         eask run update-checksum
