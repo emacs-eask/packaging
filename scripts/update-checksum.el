@@ -16,7 +16,7 @@
     (cl-case type
       (:sha256 (format "openssl dgst -sha256 %s" zip))
       (:rmd160 (format "openssl dgst -rmd160 %s" zip))
-      (:size   (format "stat %s" zip))))
+      (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
     (cl-case type
       (:sha256 (format "powershell Get-FileHash %s -Algorithm SHA256 | select -ExpandProperty Hash" zip))
