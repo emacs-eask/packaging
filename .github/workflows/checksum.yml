@@ -7,6 +7,7 @@ on:
     paths:
       - '**.yml'
       - '**.el'
+      - 'checksum/**'
   pull_request:
     branches:
       - master
