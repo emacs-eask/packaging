@@ -2,6 +2,8 @@
 
 [![checksum](https://github.com/emacs-eask/packaging/actions/workflows/checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/checksum.yml)
 
+This repository records Eask CLI's status to each package manager.
+
 #### 🧪 NPM
 > https://www.npmjs.com/package/@emacs-eask/cli
 
