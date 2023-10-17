@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(load-file "./scripts/_prepare.el")
+
 (require 'github-tags)
 
 (let* ((response (cdr (github-tags "emacs-eask/cli")))
