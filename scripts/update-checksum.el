@@ -32,7 +32,6 @@
       (:size                output)))
    (elenv-linux
     (cl-case type
-      (:sha256 (nth 0 (split-string output " ")))
       ((or :sha256 :rmd160) (nth 1 (split-string output " ")))
       (:size                output)))
    (elenv-windows output)))
