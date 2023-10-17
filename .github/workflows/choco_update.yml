@@ -42,7 +42,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - name: Update Formula
+    - name: Update package metadata
       run: |
         eask install-deps
         eask run script choco-update
