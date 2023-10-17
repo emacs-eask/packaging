@@ -1,0 +1,8 @@
+Get-Item : Cannot find path 'C:\Users\runneradmin\eask_0.8.3_win-arm64.zip' because it does not exist.
+At line:1 char:1
++ Get-Item ~/eask_0.8.3_win-arm64.zip
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\runner...3_win-arm64.zip:String) [Get-Item], ItemNotFoundExcep 
+   tion
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetItemCommand
+ 
