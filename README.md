@@ -40,6 +40,7 @@ This repository records Eask CLI's status to each package manager.
 > https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
 
 [![Port Check](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml)
+[![Port Update](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml)
 
 - [bitwarden-cli/Portfile](https://github.com/macports/macports-ports/blob/551a0eb9eff6e29b5a91e4da314e6ff2fb6b01d1/security/bitwarden-cli/Portfile) - Use it as the reference!
 
