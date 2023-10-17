@@ -41,7 +41,7 @@
 
 (let* ((ver (getenv "EASK_VER"))
        (zip (cond (elenv-windows
-                   (concat "%USERPROFILE%/" (getenv "EASK_ZIP")))
+                   (concat (getenv "USERPROFILE") "\\" (getenv "EASK_ZIP")))
                   (t (concat "~/" (getenv "EASK_ZIP")))))
        (dir (file-name-nondirectory zip))
        (parent (format "./checksum/%s/%s/" ver dir))
