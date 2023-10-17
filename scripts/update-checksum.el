@@ -14,7 +14,7 @@
       (:size   (format "stat -f%%z %s" zip))))
    (elenv-linux
     (cl-case type
-      (:sha256 (format "openssl dgst -sha256 %s" zip))
+      (:sha256 (format "sha256sum %s" zip))
       (:rmd160 (format "openssl dgst -rmd160 %s" zip))
       (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
@@ -32,6 +32,7 @@
       (:size                output)))
    (elenv-linux
     (cl-case type
+      (:sha256 (nth 0 (split-string output " ")))
       ((or :sha256 :rmd160) (nth 1 (split-string output " ")))
       (:size                output)))
    (elenv-windows output)))
@@ -46,7 +47,8 @@
        (sha256 (openssl-parse-output :sha256 sha256))
        (size   (shell-command-to-string (openssl-command :size zip)))
        (size   (openssl-parse-output :size size)))
-  (ignore-errors (make-directory parent t))
+  (ignore-errors (make-directory (expand-file-name parent) t))
+  (make-directory (expand-file-name parent) t)
   (message "parent: %s" parent)
   (message "xfn: %s" (expand-file-name parent))
   (message "rmd160: %s" rmd160)
