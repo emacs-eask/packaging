@@ -1,8 +1,1 @@
-Get-FileHash : The term 'Get-FileHash' is not recognized as the name of a cmdlet, function, script file, or operable 
 program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-At D:\a\packaging\packaging\scripts\filehash.ps1:1 char:1
-+ Get-FileHash $args[0] -Algorithm $args[1] | select -ExpandProperty Ha ...
-+ ~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Get-FileHash:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
- 
