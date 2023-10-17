@@ -45,7 +45,7 @@ jobs:
     - name: Update Formula
       run: |
         eask install-deps
-        eask run brew-update
+        eask run script brew-update
 
     - name: Set git config
       run: |

@@ -45,7 +45,7 @@ jobs:
     - name: Update snapcraft.yaml
       run: |
         eask install-deps
-        eask run snap-update
+        eask run script snap-update
 
     - name: Set git config
       run: |

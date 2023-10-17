@@ -61,7 +61,7 @@ jobs:
     - name: Update checksum info
       run: |
         eask install-deps
-        eask run update-checksum
+        eask run script update-checksum
 
     - name: Remove zip file
       run: |

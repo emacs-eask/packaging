@@ -45,7 +45,7 @@ jobs:
     - name: Update Formula
       run: |
         eask install-deps
-        eask run choco-update
+        eask run script choco-update
 
     - name: Set git config
       run: |

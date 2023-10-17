@@ -45,7 +45,7 @@ jobs:
     - name: Update Portfile
       run: |
         eask install-deps
-        eask run port-update
+        eask run script port-update
 
     - name: Set git config
       run: |

@@ -45,7 +45,7 @@ jobs:
     - name: Update Formula
       run: |
         eask install-deps
-        eask run scoop-update
+        eask run script scoop-update
 
     - name: Set git config
       run: |
