@@ -1,0 +1,88 @@
+name: checksum
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'Formula'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron:  '0 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VERSION: 0.8.3
+  DOWNLOAD_URL: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+      matrix:
+        target:
+        - linux-arm64
+        - linux-x64
+        - macos-arm64
+        - macos-x64
+        - win-arm64
+        - win-x64
+        - npm
+
+    steps:
+    - name: Download Binaries (NPM)
+      if: matrix.target == 'npm'
+      run: |
+        curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz --output ~/cli-${{ env.VERSION }}.tgz
+
+    - name: Download Binaries (Target)
+      if: matrix.target != 'npm'
+      run: |
+        curl ${{ env.DOWNLOAD_URL }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+
+    - name: Expose binary path
+      run: |
+        echo "EASK_VER=${{ env.VERSION }}" >> $GITHUB_ENV
+
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - uses: actions/checkout@v4
+
+    - name: Update checksum info
+      run: |
+        brew install openssl
+        eask run update-checksum
+
+    - name: Set git config
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit
+      continue-on-error: true
+      run: |
+        git pull
+        git add .
+        git commit -m "Update checksum eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
+
+    - name: Push updated formula
+      continue-on-error: true
+      uses: jcs090218/github-push-action@master
+      with:
+        branch: master
+        rebase: true
+        retry: 7

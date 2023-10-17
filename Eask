@@ -6,6 +6,7 @@
 (keywords "packaging" "tools")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
+(script "update-checksum" "eask load scripts/update-checksum.el")
 (script "brew-update" "eask load scripts/brew-update.el")
 (script "choco-update" "eask load scripts/choco-update.el")
 (script "scoop-update" "eask load scripts/scoop-update.el")

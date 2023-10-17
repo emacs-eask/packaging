@@ -13,8 +13,10 @@ on:
       - master
     paths-ignore:
       - '**.md'
-  schedule:
-    - cron:  '0 * * * *'
+  workflow_run:
+    workflows: ["checksum"]
+    types:
+      - completed
   workflow_dispatch:
 
 concurrency:
