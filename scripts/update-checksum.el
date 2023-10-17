@@ -20,7 +20,7 @@
    (elenv-windows
     (cl-case type
       (:sha256 (format "certutil -hashfile %s SHA256" zip))
-      (:rmd160 (format "powershell scripts/filehash.ps1 %s RIPEMD160" zip))
+      (:rmd160 (format "Not supported" zip))
       (:size   (format "filesize %s -e=0" zip))))))
 
 (defun openssl-parse-output (type output)
@@ -50,8 +50,9 @@
        (size   (shell-command-to-string (openssl-command :size zip)))
        (size   (openssl-parse-output :size size)))
   (ignore-errors (make-directory parent t))
-  (message "rmd160: %s" rmd160)
+  (message "%s" zip)
   (message "sha256: %s" sha256)
+  (message "rmd160: %s" rmd160)
   (message "size: %s" size)
   (write-region rmd160 nil (concat parent "rmd160"))
   (write-region sha256 nil (concat parent "sha256"))
