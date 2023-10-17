@@ -25,7 +25,60 @@ env:
   VERSION: 0.8.3
 
 jobs:
-  build:
+  get-ubuntu:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+        - linux-arm64
+        - linux-x64
+    steps:
+    - name: Download Binaries (Target)
+      run: |
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
+
+    - name: Expose binary path
+      run: |
+        echo "EASK_VER=${{ env.VERSION }}" >> $GITHUB_ENV
+
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.1
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
+    - name: Update checksum info
+      run: |
+        eask install-deps
+        eask run update-checksum
+
+    - name: Set git config
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit
+      continue-on-error: true
+      run: |
+        git pull
+        git add .
+        git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
+
+    - name: Push updated formula
+      continue-on-error: true
+      uses: jcs090218/github-push-action@master
+      with:
+        branch: master
+        rebase: true
+        retry: 7
+    
+  get-macos:
     # XXX: I attempted to use `ubuntu-latest`, but the openssl arguments and
     # options there are more complicated.
     #
@@ -35,12 +88,8 @@ jobs:
       fail-fast: false
       matrix:
         target:
-        - linux-arm64
-        - linux-x64
         - macos-arm64
         - macos-x64
-        - win-arm64
-        - win-x64
         - npm
 
     steps:
@@ -77,6 +126,60 @@ jobs:
     - name: Update checksum info
       run: |
         brew install openssl
+        eask install-deps
+        eask run update-checksum
+
+    - name: Set git config
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit
+      continue-on-error: true
+      run: |
+        git pull
+        git add .
+        git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
+
+    - name: Push updated formula
+      continue-on-error: true
+      uses: jcs090218/github-push-action@master
+      with:
+        branch: master
+        rebase: true
+        retry: 7
+
+  get-windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+        - win-arm64
+        - win-x64
+    steps:
+    - name: Download Binaries (Target)
+      run: |
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
+
+    - name: Expose binary path
+      run: |
+        echo "EASK_VER=${{ env.VERSION }}" >> $GITHUB_ENV
+
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.1
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
+    - name: Update checksum info
+      run: |
+        eask install-deps
         eask run update-checksum
 
     - name: Set git config

@@ -19,3 +19,4 @@
 
 (depends-on "emacs" "26.1")
 (depends-on "github-tags")
+(depends-on "elenv")
