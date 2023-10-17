@@ -3,8 +3,7 @@
 ;;; Code:
 
 (let* ((ver (getenv "EASK_VER"))
-       (zip (car (or (directory-files "~/" t "eask_")
-                     (directory-files "~/" t "cli-"))))   ; XXX: For npm tgz!
+       (zip (concat "~/" (getenv "EASK_ZIP")))
        (dir (file-name-nondirectory zip))
        (parent (format "./checksum/%s/%s/" ver dir))
        (rmd160 (shell-command-to-string (format "openssl dgst -rmd160 %s" zip)))

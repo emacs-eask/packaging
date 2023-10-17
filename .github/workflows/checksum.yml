@@ -25,6 +25,10 @@ env:
 
 jobs:
   build:
+    # XXX: I attempted to use `ubuntu-latest`, but the openssl arguments and
+    # options there are more complicated.
+    #
+    # See https://github.com/openssl/openssl/issues/9349
     runs-on: macos-latest
     strategy:
       fail-fast: false
@@ -43,11 +47,13 @@ jobs:
       if: matrix.target == 'npm'
       run: |
         curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz --output ~/cli-${{ env.VERSION }}.tgz
+        echo "EASK_ZIP=cli-${{ env.VERSION }}.tgz" >> $GITHUB_ENV
 
     - name: Download Binaries (Target)
       if: matrix.target != 'npm'
       run: |
         curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
 
     - name: Expose binary path
       run: |
@@ -82,7 +88,7 @@ jobs:
       run: |
         git pull
         git add .
-        git commit -m "Update checksum eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
+        git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
 
     - name: Push updated formula
       continue-on-error: true
