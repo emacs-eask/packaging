@@ -1,4 +1,5 @@
 # 📦 Packaging
+> Packaging for Eask CLI
 
 [![checksum](https://github.com/emacs-eask/packaging/actions/workflows/checksum.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/checksum.yml)
 
