@@ -36,9 +36,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Download Binaries (Target)
+    - uses: suisei-cn/actions-download-file@master
+      name: Download Binaries (Target)
+      if: matrix.target != 'npm'
+      id: eask_zip
+      with:
+        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+
+    - name: Expose zip path (Target)
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
 
     - name: Expose binary path
@@ -95,16 +101,28 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Download Binaries (NPM)
+    - uses: suisei-cn/actions-download-file@master
+      name: Download Binaries (NPM)
+      if: matrix.target == 'npm'
+      id: eask_zip
+      with:
+        url: https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz
+
+    - uses: suisei-cn/actions-download-file@master
+      name: Download Binaries (Target)
+      if: matrix.target != 'npm'
+      id: eask_zip
+      with:
+        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+
+    - name: Expose zip path (NPM)
       if: matrix.target == 'npm'
       run: |
-        curl https://registry.npmjs.org/@emacs-eask/cli/-/cli-${{ env.VERSION }}.tgz -o ~/cli-${{ env.VERSION }}.tgz
         echo "EASK_ZIP=cli-${{ env.VERSION }}.tgz" >> $GITHUB_ENV
 
-    - name: Download Binaries (Target)
+    - name: Expose zip path (Target)
       if: matrix.target != 'npm'
       run: |
-        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
         echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
 
     - name: Expose binary path
@@ -166,7 +184,7 @@ jobs:
       with:
         url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
-    - name: Download Binaries (Target)
+    - name: Expose zip path (Target)
       run: |
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
