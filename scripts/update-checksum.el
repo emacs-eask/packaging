@@ -16,7 +16,7 @@
     (cl-case type
       (:sha256 (format "openssl dgst -sha256 %s" zip))
       (:rmd160 (format "openssl dgst -rmd160 %s" zip))
-      (:size   (format "stat -f%%z %s" zip))))
+      (:size   (format "stat %s" zip))))
    (elenv-windows
     (cl-case type
       (:sha256 (format "Get-FileHash %s -Algorithm SHA256 | select -ExpandProperty Hash" zip))
@@ -47,6 +47,9 @@
        (size   (shell-command-to-string (openssl-command :size zip)))
        (size   (openssl-parse-output :size size)))
   (ignore-errors (make-directory parent t))
+  (message "rmd160: %s" rmd160)
+  (message "sha256: %s" sha256)
+  (message "size: %s" size)
   (write-region rmd160 nil (concat parent "rmd160"))
   (write-region sha256 nil (concat parent "sha256"))
   (write-region size nil (concat parent "size")))
