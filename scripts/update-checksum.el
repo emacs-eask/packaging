@@ -19,9 +19,9 @@
       (:size   (format "stat -c \"%%s\" %s" zip))))
    (elenv-windows
     (cl-case type
-      (:sha256 (format "scripts/filehash.ps1 %s SHA256" zip))
-      (:rmd160 (format "scripts/filehash.ps1 %s RIPEMD160" zip))
-      (:size   (format "scripts/item.ps1 %s" zip))))))
+      (:sha256 (format "powershell scripts/filehash.ps1 %s SHA256" zip))
+      (:rmd160 (format "powershell scripts/filehash.ps1 %s RIPEMD160" zip))
+      (:size   (format "powershell scripts/item.ps1 %s" zip))))))
 
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
