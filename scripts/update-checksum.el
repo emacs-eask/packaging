@@ -52,7 +52,7 @@
        (size   (shell-command-to-string (openssl-command :size zip)))
        (size   (openssl-parse-output :size size)))
   (ignore-errors (make-directory parent t))
-  (message "%s" zip)
+  (message "? %s %s" zip (file-exists-p zip))
   (message "sha256: %s" sha256)
   (message "rmd160: %s" rmd160)
   (message "size: %s" size)
