@@ -180,6 +180,7 @@ jobs:
         version: 'snapshot'
 
     - name: Update checksum info
+      shell: pwsh
       run: |
         eask install-deps
         eask run update-checksum
