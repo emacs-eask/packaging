@@ -165,7 +165,7 @@ jobs:
     - name: Download Binaries (Target)
       run: |
         curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip -o eask_${{ env.VERSION }}_${{ matrix.target }}.zip
-        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
+        Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip"
 
     - name: Expose binary path
       run: |
