@@ -22,7 +22,6 @@ concurrency:
 
 env:
   VERSION: 0.8.3
-  DOWNLOAD_URL: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}
 
 jobs:
   build:
@@ -49,7 +48,7 @@ jobs:
     - name: Download Binaries (Target)
       if: matrix.target != 'npm'
       run: |
-        curl ${{ env.DOWNLOAD_URL }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        curl https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip --output ~/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
 
     - name: Expose binary path
       run: |
