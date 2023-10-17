@@ -29,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-latest]
         target:
         - linux-arm64
         - linux-x64
@@ -54,11 +54,9 @@ jobs:
       run: |
         echo "EASK_VER=${{ env.VERSION }}" >> $GITHUB_ENV
 
-    - name: Install OpenSSL
+    - name: Install Homebrew
       run: |
-        sudo apt-get update
-        sudo apt-get install openssl
-        openssl version -a
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     - uses: jcs090218/setup-emacs@master
       with:
@@ -72,6 +70,7 @@ jobs:
 
     - name: Update checksum info
       run: |
+        brew install openssl
         eask run update-checksum
 
     - name: Set git config
