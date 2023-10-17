@@ -37,7 +37,7 @@
    (elenv-windows output)))
 
 (let* ((ver (getenv "EASK_VER"))
-       (zip (concat "~/" (getenv "EASK_ZIP")))
+       (zip (getenv "EASK_ZIP"))
        (dir (file-name-nondirectory zip))
        (parent (format "./checksum/%s/%s/" ver dir))
        (rmd160 (shell-command-to-string (openssl-command :rmd160 zip)))
