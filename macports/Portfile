@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           npm 1.0
 
 name                eask-cli
-version             0.8.3
+version             0.8.6
 revision            0
 
 npm.rootname        @emacs-eask/cli
@@ -20,6 +20,6 @@ license             GPL-3
 categories          devel
 platforms           any
 
-checksums           rmd160  adf9f635e5974a334c91a20dd757afd528cca2dd \
-                    sha256  d63d7ab8b8f2c640d20c4cdba986a7b7595ca9972753659bfd6a511387f1b122 \
-                    size 82743
+checksums           rmd160  8757ef1647c9bacac3a39b7ff767eb4a42a8f7e8 \
+                    sha256  7572294fcb53d30acf892ced70ae88b6c69d77bffc21ff5ca2df5d4d277fef08 \
+                    size 561152
