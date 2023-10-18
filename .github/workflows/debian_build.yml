@@ -34,21 +34,31 @@ jobs:
       run: |
         echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
 
+    - name: Expose Arch
+      if: matrix.arch == 'x64'
+      run: |
+        echo "ARCH=amd64" >> $GITHUB_ENV
+
+    - name: Expose Arch
+      if: matrix.arch == 'arm64'
+      run: |
+        echo "ARCH=arm64" >> $GITHUB_ENV
+
     - name: Update deb package
       working-directory: debian
       run: |
         curl -fsSL https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_linux-${{ matrix.arch }}.zip -o temp.zip
-        mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/DEBIAN"
-        mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
-        cp control/${{ matrix.arch }} "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/DEBIAN/control"
-        unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
-        dpkg-deb --build eask_${{ env.VERSION }}_${{ matrix.arch }}
+        mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/DEBIAN"
+        mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
+        cp control/${{ matrix.arch }} "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/DEBIAN/control"
+        unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
+        dpkg-deb --build eask_${{ env.VERSION }}_${{ env.ARCH }}
 
     - name: Clean up
       working-directory: debian
       run: |
         rm -rf temp.zip
-        rm -rf eask_${{ env.VERSION }}_${{ matrix.arch }}
+        rm -rf eask_${{ env.VERSION }}_${{ env.ARCH }}
 
     - name: Set git config
       run: |
