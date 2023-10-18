@@ -38,11 +38,6 @@ jobs:
         gpg --default-key "D0CF12A37328A46974F4DA35B6121C7BD46BDEE5" -abs -o - Release > Release.gpg
         gpg --default-key "D0CF12A37328A46974F4DA35B6121C7BD46BDEE5" --clearsign -o - Release > InRelease
 
-    - name: Create easksource.list
-      working-directory: debian
-      run: |
-        echo "deb [signed-by=/etc/apt/trusted.gpg.d/packaging.gpg] https://emacs-eask.github.io/packaging/debian ./" > easksource.list
-
     - name: Set git config
       run: |
         git config user.name github-actions

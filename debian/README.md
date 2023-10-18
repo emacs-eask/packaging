@@ -3,7 +3,7 @@
 ```
 sudo curl -SsL -o /etc/apt/trusted.gpg.d/easksource.gpg https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/KEY.gpg
 sudo curl -SsL -o /etc/apt/sources.list.d/easksource.list https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/easksource.list
-sudo apt update
+sudo apt update --allow-insecure-repositories
 sudo apt install eask-cli
 ```
 
