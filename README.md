@@ -23,6 +23,7 @@ This repository records Eask CLI's status to each package manager.
 - [Hosting your own PPA repository on GitHub](https://assafmo.github.io/2019/05/02/ppa-repo-hosted-on-github.html)
 - [assafmo/ppa](https://github.com/assafmo/ppa)
 - [Creating Debian/Ubuntu .deb packages](https://www.iodigital.com/en/history/intracto/creating-debianubuntu-deb-packages)
+- [dpkg-deb treats my architeceture as amd64 instead of x86)64](https://unix.stackexchange.com/questions/667735/dpkg-deb-treats-my-architeceture-as-amd64-instead-of-x8664)
 
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
