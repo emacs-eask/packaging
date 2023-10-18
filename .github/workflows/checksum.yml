@@ -206,7 +206,7 @@ jobs:
 
     - name: Expose Version
       run: |
-        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
+        Add-Content -Path ${env:GITHUB_ENV} -Value "VERSION=${{ steps.eask-cli-version.outputs.tag }}"
 
     - uses: actions/checkout@v4
 
