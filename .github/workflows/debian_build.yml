@@ -13,10 +13,6 @@ on:
       - master
     paths-ignore:
       - '**.md'
-  workflow_run:
-    workflows: ["checksum"]
-    types:
-      - completed
   workflow_dispatch:
 
 concurrency:
