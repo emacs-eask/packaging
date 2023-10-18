@@ -41,7 +41,7 @@ jobs:
         curl -fsSL https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_linux-${{ matrix.arch }}.zip -o temp.zip
         mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/DEBIAN"
         mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
-        cp control "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/DEBIAN"
+        cp control/${{ matrix.arch }} "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/DEBIAN/control"
         unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
         dpkg-deb --build eask_${{ env.VERSION }}_${{ matrix.arch }}
 
