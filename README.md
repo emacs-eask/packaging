@@ -18,6 +18,7 @@ This repository records Eask CLI's status to each package manager.
 [![Debian Update](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml)
 [![Debian Build](https://github.com/emacs-eask/packaging/actions/workflows/debian_build.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_build.yml)
 [![Debian Release](https://github.com/emacs-eask/packaging/actions/workflows/debian_release.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_release.yml)
+[![Debian Install](https://github.com/emacs-eask/packaging/actions/workflows/debian_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_install.yml)
 
 - [Hosting your own PPA repository on GitHub](https://assafmo.github.io/2019/05/02/ppa-repo-hosted-on-github.html)
 - [assafmo/ppa](https://github.com/assafmo/ppa)
