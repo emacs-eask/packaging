@@ -27,8 +27,8 @@ jobs:
       working-directory: debian
       run: |
         apt-ftparchive release . > Release
-        gpg --default-key "jcs090218@gmail.com" -abs -o - Release > Release.gpg
-        gpg --default-key "jcs090218@gmail.com" --clearsign -o - Release > InRelease
+#        gpg --default-key "jcs090218@gmail.com" -abs -o - Release > Release.gpg
+#        gpg --default-key "jcs090218@gmail.com" --clearsign -o - Release > InRelease
 
     - name: Set git config
       run: |
