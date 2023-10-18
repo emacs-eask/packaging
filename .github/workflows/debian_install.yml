@@ -1,0 +1,27 @@
+name: Debian Install
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types:
+      - completed
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Eask CLI
+      run: |
+        sudo curl -SsL -o /etc/apt/trusted.gpg.d/easksource.gpg https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/KEY.gpg
+        sudo curl -SsL -o /etc/apt/sources.list.d/easksource.list https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/easksource.list
+        sudo apt update --allow-insecure-repositories
+        sudo apt install eask-cli
+
+    - name: Print Eask CLI version
+      run: |
+        eask --version
