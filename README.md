@@ -20,6 +20,7 @@ This repository records Eask CLI's status to each package manager.
 
 - [Hosting your own PPA repository on GitHub](https://assafmo.github.io/2019/05/02/ppa-repo-hosted-on-github.html)
 - [assafmo/ppa](https://github.com/assafmo/ppa)
+- [Creating Debian/Ubuntu .deb packages](https://www.iodigital.com/en/history/intracto/creating-debianubuntu-deb-packages)
 
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
