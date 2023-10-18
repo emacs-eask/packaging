@@ -15,6 +15,7 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Debian
 > https://github.com/emacs-eask/packaging/tree/master/debian
 
+[![Debian Update](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml)
 [![Debian Build](https://github.com/emacs-eask/packaging/actions/workflows/debian_build.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_build.yml)
 [![Debian Release](https://github.com/emacs-eask/packaging/actions/workflows/debian_release.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_release.yml)
 
