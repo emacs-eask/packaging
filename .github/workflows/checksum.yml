@@ -109,6 +109,16 @@ jobs:
         - npm
 
     steps:
+    - uses: oprypin/find-latest-tag@v1
+      with:
+        repository: emacs-eask/cli
+        releases-only: true
+      id: eask-cli-version
+
+    - name: Expose Version
+      run: |
+        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
+
     - uses: actions/checkout@v4
 
     - uses: suisei-cn/actions-download-file@master
@@ -188,6 +198,16 @@ jobs:
         - win-arm64
         - win-x64
     steps:
+    - uses: oprypin/find-latest-tag@v1
+      with:
+        repository: emacs-eask/cli
+        releases-only: true
+      id: eask-cli-version
+
+    - name: Expose Version
+      run: |
+        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
+
     - uses: actions/checkout@v4
 
     - uses: suisei-cn/actions-download-file@master
