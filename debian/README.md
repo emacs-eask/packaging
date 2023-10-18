@@ -10,7 +10,8 @@ sudo apt install eask-cli
 ## Export GPG key in ASCII armored version
 
 ```
-gpg --armor --export D0CF12A37328A46974F4DA35B6121C7BD46BDEE5
+gpg --armor --export-secret-key D0CF12A37328A46974F4DA35B6121C7BD46BDEE5
 ```
 
-See https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key.
+- https://github.com/crazy-max/ghaction-import-gpg#prerequisites
+- https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key.
