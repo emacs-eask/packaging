@@ -1,1 +1,1 @@
-deb https://emacs-eask.github.io/packaging/debian ./
+deb [signed-by=/etc/apt/trusted.gpg.d/packaging.gpg] https://emacs-eask.github.io/packaging/debian ./
