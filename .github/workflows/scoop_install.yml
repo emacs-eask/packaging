@@ -20,13 +20,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-        - windows-latest
-
+    runs-on: windows-latest
     steps:
     - name: Install Scoop
       uses: MinoruSekine/setup-scoop@main

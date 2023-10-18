@@ -1,4 +1,4 @@
-name: Scoop Update
+name: Debian Build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     paths:
       - '**.el'
       - '**.yml'
-      - 'bucket/**'
+      - 'debian/**'
   pull_request:
     branches:
       - master
@@ -23,24 +23,38 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  VERSION: 0.8.6
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+        - arm64
+        - x64
+
     steps:
     - uses: actions/checkout@v4
 
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: 29.1
+#    - name: Preparation
+#      run: |
+#        apt-get install unzip -y
 
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
-    - name: Update Formula
+    - name: Update deb package
+      working-directory: debian
       run: |
-        eask install-deps
-        eask run script scoop-update
+        curl -fsSL https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_linux-${{ matrix.arch }}.zip -o temp.zip
+        mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
+        unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ matrix.arch }}/usr/local/bin"
+
+    - name: Clean up
+      working-directory: debian
+      run: |
+        rm -rf temp.zip
+        rm -rf eask_${{ env.VERSION }}_${{ matrix.arch }}
 
     - name: Set git config
       run: |
@@ -54,7 +68,7 @@ jobs:
         git add .
         git commit -m "Update Scoop Bucket"
 
-    - name: Push updated bucket
+    - name: Push updated deb package
       continue-on-error: true
       uses: jcs090218/github-push-action@master
       with:
