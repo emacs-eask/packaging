@@ -1,7 +1,7 @@
 name: Debian Build
 
 on:
-   workflow_run:
+  workflow_run:
     workflows: ["Debian Update"]
     types:
       - completed
