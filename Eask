@@ -7,6 +7,7 @@
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
 (script "update-checksum" "eask load scripts/update-checksum.el")
+(script "debian-update" "eask load scripts/debian-update.el")
 (script "snap-update" "eask load scripts/snap-update.el")
 (script "brew-update" "eask load scripts/brew-update.el")
 (script "port-update" "eask load scripts/port-update.el")

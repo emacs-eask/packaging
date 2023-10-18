@@ -1,18 +1,10 @@
 name: Debian Build
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '**.el'
-      - '**.yml'
-      - 'debian/**'
-  pull_request:
-    branches:
-      - master
-    paths-ignore:
-      - '**.md'
+   workflow_run:
+    workflows: ["Debian Update"]
+    types:
+      - completed
   workflow_dispatch:
 
 concurrency:

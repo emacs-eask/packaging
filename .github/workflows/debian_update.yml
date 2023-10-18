@@ -1,4 +1,4 @@
-name: Scoop Update
+name: Debian Update
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     paths:
       - '**.el'
       - '**.yml'
-      - 'bucket/**'
+      - 'debian/**'
   pull_request:
     branches:
       - master
@@ -37,10 +37,10 @@ jobs:
       with:
         version: 'snapshot'
 
-    - name: Update Bucket
+    - name: Update debian
       run: |
         eask install-deps
-        eask run script scoop-update
+        eask run script debian-update
 
     - name: Set git config
       run: |
@@ -52,7 +52,7 @@ jobs:
       run: |
         git pull
         git add .
-        git commit -m "Update Scoop Bucket"
+        git commit -m "Update Debian control files"
 
     - name: Push updated bucket
       continue-on-error: true
