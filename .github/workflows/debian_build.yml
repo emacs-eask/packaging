@@ -52,6 +52,7 @@ jobs:
         mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
         cp control/${{ matrix.arch }} "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/DEBIAN/control"
         unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
+        chmod -R 777 "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
         dpkg-deb --build eask_${{ env.VERSION }}_${{ env.ARCH }}
 
     - name: Clean up
