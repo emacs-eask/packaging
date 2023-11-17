@@ -2,12 +2,12 @@ require "language/node"
 
 class EaskCli < Formula
   desc "A set of command-line tools to build Emacs packages"
-  version "0.8.6"
+  version "0.9.0"
   homepage "https://emacs-eask.github.io/"
   license "GPLv3"
 
   url "https://registry.npmjs.org/@emacs-eask/cli/-/cli-#{version}.tgz"
-  sha256 "7572294fcb53d30acf892ced70ae88b6c69d77bffc21ff5ca2df5d4d277fef08"
+  sha256 "115d0a2970bf47780caef70842cf2a58b036f04d0bffe8b1d53f5de2932a205e"
 
   depends_on "node"
 
