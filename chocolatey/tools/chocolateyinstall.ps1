@@ -9,10 +9,6 @@ $packageArgs = @{
   unzipLocation = $toolsDir
   url64bit      = $url64
 
-<<<<<<< HEAD
-  checksum      = 'c8437d4de56bf3a3c62bfe1f68ffc287403f8d354019f84e6ad5611c483cf35a'
-=======
->>>>>>> 63ba213e (fix: Choco)
   checksumType  = 'sha256'
   checksum64    = 'c8437d4de56bf3a3c62bfe1f68ffc287403f8d354019f84e6ad5611c483cf35a'
 }
