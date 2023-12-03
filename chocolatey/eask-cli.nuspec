@@ -40,7 +40,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <projectUrl>https://emacs-eask.github.io/</projectUrl>
     <!-- There are a number of CDN Services that can be used for hosting the Icon for a package. More information can be found here: https://docs.chocolatey.org/en-us/create/create-packages#package-icon-guidelines -->
     <!-- Here is an example using Githack -->
-    <iconUrl>https://raw.githubusercontent.com/emacs-eask/cli/master/docs/static/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/emacs-eask/cli/eb7c1f29d65679e532bb8d094eb2f7faa7b492ca/docs/static/logo.png</iconUrl>
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://github.com/emacs-eask/cli/blob/master/COPYING</licenseUrl>
@@ -51,7 +51,27 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <bugTrackerUrl>https://github.com/emacs-eask/cli/issues</bugTrackerUrl>
     <tags>eask emacs cli</tags>
     <summary>Dependency management for Emacs Lisp</summary>
-    <description>Please visit https://github.com/emacs-eask/eask </description>
+    <description>Eask was built to use as a package development tool in your Elisp packages. But
+now, Eask supports various types of Emacs Lisp tasks. It can be used in three
+major ways:
+
+1. Dev tool for Elisp packages
+2. Dependency management for your configuration
+3. Run elisp programs for all other purposes
+
+So what are the major differences between Eask and other build tools like
+[Cask][], [makem.sh][], and [Eldev][], other than the things above?
+
+Good question! Eask is more than a build tool now, it can be used for various
+purposes! But here are Eask aims to be:
+
+- **Consistent** enough to sandbox across all systems
+- **General** enough to have Emacsers frequently used commands (`byte-compile`, `checkdoc`, etc)
+- **Robust** enough to provide useful results even in the presence of user errors
+- **Dependency-free** so that the tool can be run on any platform
+
+For more information, find the manual at https://emacs-eask.github.io/
+</description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->
 
