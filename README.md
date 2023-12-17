@@ -54,6 +54,9 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
+![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/eask-cli?logo=chocolatey)
+![Chocolatey](https://img.shields.io/chocolatey/dt/eask-cli)
+
 [![Choco Update](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml)
 
 #### 🧪 Scoop
