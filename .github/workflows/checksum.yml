@@ -47,7 +47,7 @@ jobs:
       name: Download Binaries (Target)
       if: matrix.target != 'npm'
       with:
-        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.tar.gz
 
     - name: Expose zip path (Target)
       run: |
@@ -131,7 +131,7 @@ jobs:
       name: Download Binaries (Target)
       if: matrix.target != 'npm'
       with:
-        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.zip
+        url: https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_${{ matrix.target }}.tar.gz
 
     - name: Expose zip path (NPM)
       if: matrix.target == 'npm'
