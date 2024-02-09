@@ -57,7 +57,7 @@ jobs:
     - name: Clean up
       working-directory: debian
       run: |
-        rm -rf temp.zip
+        rm -rf temp.tar.gz
         rm -rf eask_${{ env.VERSION }}_${{ env.ARCH }}
 
     - name: Set git config
