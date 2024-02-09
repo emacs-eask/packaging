@@ -47,12 +47,11 @@ jobs:
     - name: Update deb package
       working-directory: debian
       run: |
-        curl -fsSL https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_linux-${{ matrix.arch }}.zip -o temp.zip
+        curl -fsSL https://github.com/emacs-eask/cli/releases/download/${{ env.VERSION }}/eask_${{ env.VERSION }}_linux-${{ matrix.arch }}.tar.gz -o temp.tar.gz
         mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/DEBIAN"
         mkdir -p "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
         cp control/${{ matrix.arch }} "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/DEBIAN/control"
-        unzip temp.zip -d "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
-        chmod -R 777 "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
+        tar -xvzf temp.tar.gz -C "$(pwd)/eask_${{ env.VERSION }}_${{ env.ARCH }}/usr/local/bin"
         dpkg-deb --build eask_${{ env.VERSION }}_${{ env.ARCH }}
 
     - name: Clean up
