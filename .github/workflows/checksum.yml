@@ -51,7 +51,7 @@ jobs:
 
     - name: Expose zip path (Target)
       run: |
-        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
+        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.tar.gz" >> $GITHUB_ENV
 
     - name: Expose binary path
       run: |
@@ -141,7 +141,7 @@ jobs:
     - name: Expose zip path (Target)
       if: matrix.target != 'npm'
       run: |
-        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.zip" >> $GITHUB_ENV
+        echo "EASK_ZIP=eask_${{ env.VERSION }}_${{ matrix.target }}.tar.gz" >> $GITHUB_ENV
 
     - name: Expose binary path
       run: |
