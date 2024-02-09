@@ -22,7 +22,11 @@
   "Return checksum zip path."
   (cl-case type
     (`npm (format "cli-%s.tgz" version))
-    (t    (format "eask_%s_%s.zip" version type))))
+    (t
+     (cond ((memq system-type '(cygwin windows-nt ms-dos))
+            (format "eask_%s_%s.zip" version type))
+           (t
+            (format "eask_%s_%s.tar.gz" version type))))))
 
 (defun checksum-data (type version)
   "Return checksum data from TYPE and eask's VERSION."
