@@ -38,6 +38,14 @@
        :rmd160 ,(string-trim (file-to-string rmd160))
        :size   ,(string-trim (file-to-string size)))))
 
+(defun get-latest-tag ()
+  "Return the latest tag (not including pre-release)."
+  (require 'github-tags)
+  (let* ((response (cdr (github-tags "emacs-eask/cli")))
+         (tags (plist-get response :names))
+         (latest (nth 1 tags)))  ; Skip the first one since it's the pre-release!
+    latest))
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t

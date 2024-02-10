@@ -2,11 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'github-tags)
+(load-file "./scripts/_prepare.el")
 
-(let* ((response (cdr (github-tags "emacs-eask/cli")))
-       (tags (plist-get response :names))
-       (latest (car tags))
+(let* ((latest (get-latest-tag))
        (version)
        (beg) (end))
   (with-current-buffer (find-file "snap/snapcraft.yaml")
