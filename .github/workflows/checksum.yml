@@ -110,6 +110,8 @@ jobs:
 
     steps:
     - uses: cardinalby/git-get-release-action@1.2.4
+      env:
+        GITHUB_TOKEN: ${{ env.PAT }}
       with:
         repo: emacs-eask/cli
         prerelease: false
