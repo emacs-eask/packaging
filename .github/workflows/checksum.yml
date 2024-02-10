@@ -109,7 +109,7 @@ jobs:
         - npm
 
     steps:
-    - uses: cardinalby/git-get-release-action@v1.2.4
+    - uses: cardinalby/git-get-release-action@1.2.4
       with:
         repo: emacs-eask/cli
         prerelease: false
