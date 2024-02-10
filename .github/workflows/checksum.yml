@@ -117,12 +117,12 @@ jobs:
       with:
         version: 'snapshot'
 
+    - uses: actions/checkout@v4
+
     - name: Expose Version
       run: |
         eask install-deps --dev
         echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
-
-    - uses: actions/checkout@v4
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
