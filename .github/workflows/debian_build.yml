@@ -22,17 +22,20 @@ jobs:
         - x64
 
     steps:
-    - uses: actions/checkout@v4
-
-    - uses: oprypin/find-latest-tag@v1
+    - uses: jcs090218/setup-emacs@master
       with:
-        repository: emacs-eask/cli
-        releases-only: true
-      id: eask-cli-version
+        version: ${{ vars.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
 
     - name: Expose Version
       run: |
-        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
+        eask install-deps --dev
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - name: Expose Arch
       if: matrix.arch == 'x64'
