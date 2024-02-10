@@ -23,7 +23,7 @@
   (cl-case type
     (`npm (format "cli-%s.tgz" version))
     (t
-     (cond ((string-match-p "_win" type)
+     (cond ((string-match-p "win" type)
             (format "eask_%s_%s.zip" version type))
            (t
             (format "eask_%s_%s.tar.gz" version type))))))
