@@ -31,17 +31,20 @@ jobs:
         - linux-arm64
         - linux-x64
     steps:
-    - uses: oprypin/find-latest-tag@v1
+    - uses: jcs090218/setup-emacs@master
       with:
-        repository: emacs-eask/cli
-        releases-only: true
-      id: eask-cli-version
+        version: ${{ vars.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
 
     - name: Expose Version
       run: |
-        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
-
-    - uses: actions/checkout@v4
+        eask install-deps --dev
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
@@ -109,19 +112,20 @@ jobs:
         - npm
 
     steps:
-    - uses: cardinalby/git-get-release-action@1.2.4
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+    - uses: jcs090218/setup-emacs@master
       with:
-        repo: emacs-eask/cli
-        prerelease: false
-      id: eask-cli-version
+        version: ${{ vars.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
 
     - name: Expose Version
       run: |
-        echo "VERSION=${{ steps.eask-cli-version.outputs.tag_name }}" >> $GITHUB_ENV
-
-    - uses: actions/checkout@v4
+        eask install-deps --dev
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
@@ -200,17 +204,21 @@ jobs:
         - win-arm64
         - win-x64
     steps:
-    - uses: oprypin/find-latest-tag@v1
+    - uses: jcs090218/setup-emacs@master
       with:
-        repository: emacs-eask/cli
-        releases-only: true
-      id: eask-cli-version
+        version: ${{ vars.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
 
     - name: Expose Version
       run: |
-        Add-Content -Path ${env:GITHUB_ENV} -Value "VERSION=${{ steps.eask-cli-version.outputs.tag }}"
-
-    - uses: actions/checkout@v4
+        eask install-deps --dev
+        Invoke-Expression 'eask load scripts/latest-tag.el' | Out-String -OutVariable tag
+        Add-Content -Path ${env:GITHUB_ENV} -Value "VERSION=$tag"
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
