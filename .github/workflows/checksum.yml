@@ -109,10 +109,10 @@ jobs:
         - npm
 
     steps:
-    - uses: oprypin/find-latest-tag@v1
+    - uses: cardinalby/git-get-release-action@v1.2.4
       with:
-        repository: emacs-eask/cli
-        releases-only: true
+        repo: emacs-eask/cli
+        prerelease: false
       id: eask-cli-version
 
     - name: Expose Version
