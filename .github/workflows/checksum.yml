@@ -109,17 +109,18 @@ jobs:
         - npm
 
     steps:
-    - uses: cardinalby/git-get-release-action@1.2.4
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+    - uses: jcs090218/setup-emacs@master
       with:
-        repo: emacs-eask/cli
-        prerelease: false
-      id: eask-cli-version1
+        version: ${{ vars.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
 
     - name: Expose Version
       run: |
-        echo "VERSION=${{ steps.eask-cli-version.outputs.tag }}" >> $GITHUB_ENV
+        eask install-deps --dev
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - uses: actions/checkout@v4
 
