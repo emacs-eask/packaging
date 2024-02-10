@@ -62,7 +62,7 @@ jobs:
 
     - uses: jcs090218/setup-emacs@master
       with:
-        version: ${{ vars.EMACS_VER }}
+        version: 29.2
 
     - uses: emacs-eask/setup-eask@master
       with:
@@ -114,7 +114,7 @@ jobs:
     steps:
     - uses: jcs090218/setup-emacs@master
       with:
-        version: ${{ vars.EMACS_VER }}
+        version: 29.2
 
     - uses: emacs-eask/setup-eask@master
       with:
@@ -159,7 +159,7 @@ jobs:
 
     - uses: jcs090218/setup-emacs@master
       with:
-        version: ${{ vars.EMACS_VER }}
+        version: 29.2
 
     - uses: emacs-eask/setup-eask@master
       with:
@@ -206,7 +206,7 @@ jobs:
     steps:
     - uses: jcs090218/setup-emacs@master
       with:
-        version: ${{ vars.EMACS_VER }}
+        version: 29.2
 
     - uses: emacs-eask/setup-eask@master
       with:
@@ -235,7 +235,7 @@ jobs:
 
     - uses: jcs090218/setup-emacs@master
       with:
-        version: ${{ vars.EMACS_VER }}
+        version: 29.2
 
     - uses: emacs-eask/setup-eask@master
       with:
