@@ -17,6 +17,12 @@ This repository records Eask CLI's status to each package manager.
 [![npm-dt](https://img.shields.io/npm/dt/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 
+#### 🧪 Nix
+> https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/eask/default.nix
+
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask)
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask)
+
 #### 🧪 Debian
 > https://github.com/emacs-eask/packaging/tree/master/debian
 
@@ -33,8 +39,8 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
+[![](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
+[![](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
 
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
