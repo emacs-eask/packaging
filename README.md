@@ -17,12 +17,6 @@ This repository records Eask CLI's status to each package manager.
 [![npm-dt](https://img.shields.io/npm/dt/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 
-#### 🧪 Nix
-> https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/eask/default.nix
-
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask)
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask)
-
 #### 🧪 Debian
 > https://github.com/emacs-eask/packaging/tree/master/debian
 
@@ -45,6 +39,12 @@ This repository records Eask CLI's status to each package manager.
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
 - [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
+
+#### 🧪 Nix
+> https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/eask/default.nix
+
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask)
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask)
 
 #### 🧪 Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
