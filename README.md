@@ -33,10 +33,13 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
 
-[![](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
-[![](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
+[![](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft
+)]()
 
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
+
+[![](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
+[![](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
 
 - [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
 
