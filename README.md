@@ -34,7 +34,7 @@ This repository records Eask CLI's status to each package manager.
 > https://snapcraft.io/eask-cli
 
 [![](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft
-)]()
+)](https://snapcraft.io/eask-cli)
 
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
