@@ -80,7 +80,7 @@ This repository records Eask CLI's status to each package manager.
 [![Scoop Update](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml)
 
 #### 🧪 Winget
-> WIP
+> https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/eask/
 
 ## ⚜️ License
 
