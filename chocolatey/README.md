@@ -54,4 +54,6 @@ After executing the uninstall ensure that `eask.exe` is not found in the Chocolo
 See the [Chocolatey Packages Quick Start][quickstart] for more information.
 
 
+<!-- Links -->
+
 [quickstart]: https://github.com/chocolatey/choco/wiki/CreatePackagesQuickStart
