@@ -25,12 +25,20 @@ jobs:
   get-version:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.get-ver.outputs.VERSION }}
+      version: ${{ steps.expose-ver.outputs.VERSION }}
     steps:
-    - name: Get Version
-      id: get-ver
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.4
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - name: Expose Version
+      id: expose-ver
       run: |
-        # ...
+        eask install-deps --dev
         echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_OUTPUT
     
   get-ubuntu:
