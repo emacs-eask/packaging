@@ -35,6 +35,8 @@ jobs:
       with:
         version: 'snapshot'
 
+    - uses: actions/checkout@v4
+
     - name: Expose Version
       id: expose-ver
       run: |
