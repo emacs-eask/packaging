@@ -22,8 +22,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  get-ubuntu:
+  get-version:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get-ver.outputs.VERSION }}
+    steps:
+    - name: Get Version
+      id: get-ver
+      run: |
+        # ...
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_OUTPUT
+    
+  get-ubuntu:
+    needs: [get-version]
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
     strategy:
       fail-fast: false
       matrix:
@@ -40,11 +54,6 @@ jobs:
         version: 'snapshot'
 
     - uses: actions/checkout@v4
-
-    - name: Expose Version
-      run: |
-        eask install-deps --dev
-        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
@@ -98,11 +107,14 @@ jobs:
         retry: 7
     
   get-macos:
+    needs: [get-version]
     # XXX: I attempted to use `ubuntu-latest`, but the openssl arguments and
     # options there are more complicated.
     #
     # See https://github.com/openssl/openssl/issues/9349
     runs-on: macos-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
     strategy:
       fail-fast: false
       matrix:
@@ -121,11 +133,6 @@ jobs:
         version: 'snapshot'
 
     - uses: actions/checkout@v4
-
-    - name: Expose Version
-      run: |
-        eask install-deps --dev
-        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
@@ -196,7 +203,10 @@ jobs:
         retry: 7
 
   get-windows:
+    needs: [get-version]
     runs-on: windows-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
     strategy:
       fail-fast: false
       matrix:
@@ -213,12 +223,6 @@ jobs:
         version: 'snapshot'
 
     - uses: actions/checkout@v4
-
-    - name: Expose Version
-      run: |
-        eask install-deps --dev
-        Invoke-Expression 'eask load scripts/latest-tag.el' | Out-String -OutVariable tag
-        Add-Content -Path ${env:GITHUB_ENV} -Value "VERSION=$tag"
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
