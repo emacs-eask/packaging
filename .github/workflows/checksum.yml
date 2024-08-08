@@ -55,6 +55,16 @@ jobs:
         - linux-arm64
         - linux-x64
     steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.4
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
       if: matrix.target != 'npm'
@@ -68,16 +78,6 @@ jobs:
     - name: Expose binary path
       run: |
         echo "EASK_VER=${{ env.VERSION }}" >> $GITHUB_ENV
-
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: 29.4
-
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
-    - uses: actions/checkout@v4
 
     - name: Update checksum info
       run: |
@@ -126,6 +126,16 @@ jobs:
         - npm
 
     steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.4
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
       if: matrix.target == 'npm'
@@ -155,16 +165,6 @@ jobs:
     - name: Install Homebrew
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: 29.4
-
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
-    - uses: actions/checkout@v4
 
     - name: Update checksum info
       run: |
@@ -208,6 +208,16 @@ jobs:
         - win-arm64
         - win-x64
     steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.4
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
       with:
@@ -220,16 +230,6 @@ jobs:
     - name: Expose binary path
       run: |
         Add-Content -Path ${env:GITHUB_ENV} -Value "EASK_VER=${{ env.VERSION }}"
-
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: 29.4
-
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
-    - uses: actions/checkout@v4
 
     - name: Update checksum info
       run: |
