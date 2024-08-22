@@ -2,6 +2,7 @@
 
 PortSystem          1.0
 PortGroup           npm 1.0
+PortGroup           elisp 1.0
 
 name                eask-cli
 version             0.10.0
@@ -10,7 +11,7 @@ revision            0
 npm.rootname        @emacs-eask/cli
 distname            cli-${version}
 
-maintainers         {jcs090218 @jcs090218} openmaintainer
+maintainers         {@jcs090218 gmail.com:jcs090218} openmaintainer
 description         CLI for building, runing, testing, and managing your Emacs Lisp dependencies
 long_description    Eask was built to be used as a package development tool in your Elisp packages. \
                     But now, it can be used as a dev tool for Elisp packages, dependency management \
