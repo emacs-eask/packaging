@@ -9,7 +9,7 @@
        (beg) (end)
        (data (checksum-data "win-x64" latest))
        (updated))
-  (with-current-buffer (find-file "chocolatey/eask-cli.nuspec")
+  (with-find-file "chocolatey/eask-cli.nuspec"
     (goto-char (point-min))
     (when (search-forward "<version>" nil t)
       (when-let ((beg (point))
@@ -21,9 +21,9 @@
         (insert new-content)
         (save-buffer)
         (setq updated t)
-        (message "[INFO] Update Eask CLI to latest version %s" latest))))
+        (message "[INFO] Updated file %s to version %s" tf latest))))
   (when updated
-    (with-current-buffer (find-file "chocolatey/tools/chocolateyinstall.ps1")
+    (with-find-file "chocolatey/tools/chocolateyinstall.ps1"
       (goto-char (point-min))
       (when (search-forward "checksum      = '" nil t)
         (delete-region (point) (1- (line-end-position)))

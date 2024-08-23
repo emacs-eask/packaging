@@ -8,7 +8,7 @@
        (version)
        (beg) (end)
        (data (checksum-data 'npm latest)))
-  (with-current-buffer (find-file "Formula/eask-cli.rb")
+  (with-find-file "Formula/eask-cli.rb"
     (goto-char (point-min))
     (when (search-forward "version " nil t)
       (when-let ((beg (1+ (point)))
@@ -23,7 +23,7 @@
           (delete-region (point) (1- (line-end-position)))
           (insert (plist-get data :sha256)))
         (save-buffer)
-        (message "[INFO] Update Eask CLI to latest version %s" latest)))))
+        (message "[INFO] Updated file %s to version %s" tf latest)))))
 
 ;; Local Variables:
 ;; coding: utf-8

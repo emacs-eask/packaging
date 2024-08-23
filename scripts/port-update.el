@@ -8,7 +8,7 @@
        (version)
        (beg) (end)
        (data (checksum-data 'npm latest)))
-  (with-current-buffer (find-file "macports/Portfile")
+  (with-find-file "macports/Portfile"
     (goto-char (point-min))
     (when (search-forward "version             " nil t)
       (when-let ((beg (point))
@@ -31,7 +31,7 @@
           (delete-region (point) (line-end-position))
           (insert (plist-get data :size)))
         (save-buffer)
-        (message "[INFO] Update Eask CLI to latest version %s" latest)))))
+        (message "[INFO] Updated the %s to version %s" tf latest)))))
 
 ;; Local Variables:
 ;; coding: utf-8

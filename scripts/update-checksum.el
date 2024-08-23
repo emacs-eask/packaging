@@ -45,10 +45,10 @@
   (ignore-errors (make-directory parent t))
   (message "sha256: %s" (string-trim sha256))
   (message "rmd160: %s" (string-trim rmd160))
-  (message "size: %s" (string-trim size))
+  (message "size: %s"   (string-trim size))
   (write-region rmd160 nil (concat parent "rmd160"))
   (write-region sha256 nil (concat parent "sha256"))
-  (write-region size nil (concat parent "size")))
+  (write-region size   nil (concat parent "size")))
 
 ;; Local Variables:
 ;; coding: utf-8

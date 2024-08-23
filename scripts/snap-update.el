@@ -7,7 +7,7 @@
 (let* ((latest (get-latest-tag))
        (version)
        (beg) (end))
-  (with-current-buffer (find-file "snap/snapcraft.yaml")
+  (with-find-file "snap/snapcraft.yaml"
     (goto-char (point-min))
     (when (search-forward "version: " nil t)
       (when-let ((beg (point))
@@ -18,7 +18,7 @@
         (erase-buffer)
         (insert new-content)
         (save-buffer)
-        (message "[INFO] Update Eask CLI to latest version %s" latest)))))
+        (message "[INFO] Updated file %s to version %s" tf latest)))))
 
 ;; Local Variables:
 ;; coding: utf-8

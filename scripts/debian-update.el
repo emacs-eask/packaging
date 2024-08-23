@@ -7,7 +7,7 @@
 (let* ((latest (get-latest-tag))
        (version)
        (beg) (end))
-  (with-current-buffer (find-file "debian/control/arm64")
+  (with-find-file "debian/control/arm64"
     (goto-char (point-min))
     (when (search-forward "Version: " nil t)
       (when-let ((beg (point))
@@ -18,8 +18,8 @@
         (erase-buffer)
         (insert new-content)
         (save-buffer)
-        (message "[INFO] Update Eask CLI to latest version %s" latest))))
-  (with-current-buffer (find-file "debian/control/x64")
+        (message "[INFO] Updated file %s to version %s" tf latest))))
+  (with-find-file "debian/control/x64"
     (goto-char (point-min))
     (when (search-forward "Version: " nil t)
       (when-let ((beg (point))
@@ -30,7 +30,7 @@
         (erase-buffer)
         (insert new-content)
         (save-buffer)
-        (message "[INFO] Update Eask CLI to latest version %s" latest)))))
+        (message "[INFO] Updated file %s to version %s" tf latest)))))
 
 ;; Local Variables:
 ;; coding: utf-8
