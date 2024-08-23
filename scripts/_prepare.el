@@ -13,7 +13,7 @@
 (defmacro with-find-file (filename &rest body)
   "Execute BODY in FILENAME."
   (declare (indent 1) (debug t))
-  `(let ((tf filename)) (with-current-buffer (find-file tf) ,@body)))
+  `(let ((tf ,filename)) (with-current-buffer (find-file tf) ,@body)))
 
 (defun file-size (filename)
   "Return FILENAME's size."
