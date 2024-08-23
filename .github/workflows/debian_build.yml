@@ -12,8 +12,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  get-version:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.expose-ver.outputs.VERSION }}
+    steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: 29.4
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v4
+
+    - name: Expose Version
+      id: expose-ver
+      run: |
+        eask install-deps --dev
+        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_OUTPUT
+
+  build:
+    needs: [get-version]
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
     strategy:
       fail-fast: false
       matrix:
@@ -31,11 +55,6 @@ jobs:
         version: 'snapshot'
 
     - uses: actions/checkout@v4
-
-    - name: Expose Version
-      run: |
-        eask install-deps --dev
-        echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_ENV
 
     - name: Expose Arch
       if: matrix.arch == 'x64'
