@@ -10,13 +10,13 @@
 ;;
 ;;; Util
 
-(defun file-size (file)
-  "Return file's size."
-  (with-temp-buffer (insert-file-contents file) (eask-2str (buffer-size))))
+(defun file-size (filename)
+  "Return FILENAME's size."
+  (eask-2str (file-attribute-size (file-attributes filename))))
 
-(defun file-to-string (file)
-  "Return file's string."
-  (with-temp-buffer (insert-file-contents file) (buffer-string)))
+(defun file-to-string (filename)
+  "Return FILENAME's string."
+  (with-temp-buffer (insert-file-contents filename) (buffer-string)))
 
 (defun checksum-zip (type version)
   "Return checksum zip path."
