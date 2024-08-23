@@ -46,14 +46,6 @@ jobs:
         - x64
 
     steps:
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: 29.4
-
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
     - uses: actions/checkout@v4
 
     - name: Expose Arch
