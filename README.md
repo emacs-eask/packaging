@@ -44,7 +44,7 @@ This repository records Eask CLI's status to each package manager.
 - [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
 
 #### 🧪 Nix
-> https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask/package.nix
+> https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask-cli/package.nix
 
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask)
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask)
