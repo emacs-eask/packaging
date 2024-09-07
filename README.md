@@ -46,8 +46,8 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Nix
 > https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask-cli/package.nix
 
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask)
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask)
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 
 #### 🧪 Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
