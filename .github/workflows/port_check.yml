@@ -22,15 +22,27 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v4
-
     - name: Install MacPorts
       run: |
         curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci
         source ./macports-ci install
 
+    - uses: actions/checkout@v4
+
+    - name: Copy Portfile to ~/
+      run: |
+        cp ./macports/Portfile ~/
+
+    - uses: actions/checkout@v4
+      with:
+        repository: 'macports/macports-ports'
+
+    - name: Copy Portfile from ~/ to target directory
+      run: |
+        cp ~/Portfile ./devel/eask-cli/Portfile
+
     - name: Test
-      working-directory: macports
+      working-directory: devel/eask-cli/
       run: |
         port lint --nitpick
         sudo port -vst install
