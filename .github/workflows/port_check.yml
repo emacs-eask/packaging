@@ -24,8 +24,6 @@ jobs:
     steps:
     - name: Install MacPorts
       uses: melusina-org/setup-macports@v1.1.4
-      with:
-        version: '2.10.1'
 
     - uses: actions/checkout@v4
 
