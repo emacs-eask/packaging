@@ -33,7 +33,8 @@ jobs:
       run: |
         cp ./macports/Portfile ~/
 
-    - uses: actions/checkout@v4
+    - name: Checkout MacPorts
+      uses: actions/checkout@v4
       with:
         repository: 'macports/macports-ports'
 
@@ -44,5 +45,6 @@ jobs:
     - name: Test
       working-directory: devel/eask-cli/
       run: |
-        port lint --nitpick
+        sudo port -v install libcxx
+        sudo port lint --nitpick
         sudo port -vst install
