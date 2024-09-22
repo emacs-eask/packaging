@@ -45,7 +45,7 @@ jobs:
     - name: Prepare
       run: |
         sudo port -v install libcxx
-        sudo port -v install tar
+        sudo port -v install gnutar
 
     - name: Test
       working-directory: devel/eask-cli/
