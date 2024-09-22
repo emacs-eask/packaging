@@ -42,9 +42,13 @@ jobs:
       run: |
         cp ~/Portfile ./devel/eask-cli/Portfile
 
+    - name: Prepare
+      run: |
+        sudo port -v install libcxx
+        sudo port -v install cui
+
     - name: Test
       working-directory: devel/eask-cli/
       run: |
-        sudo port -v install libcxx
         sudo port lint --nitpick
         sudo port -vst install
