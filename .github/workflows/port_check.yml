@@ -51,3 +51,7 @@ jobs:
       run: |
         sudo port lint --nitpick
         sudo port -vst install
+
+    - name: Show log
+      run: |
+        cat /opt/local/var/macports/logs/_opt_local_var_macports_sources_rsync.macports.org_macports_release_tarballs_ports_devel_pkgconfig/pkgconfig/main.log
