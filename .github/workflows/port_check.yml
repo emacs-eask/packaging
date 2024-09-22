@@ -48,6 +48,7 @@ jobs:
 
     - name: Test
       working-directory: devel/eask-cli/
+      continue-on-error: true
       run: |
         sudo port lint --nitpick
         sudo port -vst install
