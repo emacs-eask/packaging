@@ -22,6 +22,10 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
     - name: Install MacPorts
       uses: melusina-org/setup-macports@v1.1.4
       with:
