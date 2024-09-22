@@ -23,9 +23,9 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Install MacPorts
-      run: |
-        curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci
-        source ./macports-ci install
+      uses: melusina-org/setup-macports@v1.1.4
+      with:
+        version: '2.10.1'
 
     - uses: actions/checkout@v4
 
@@ -45,7 +45,6 @@ jobs:
     - name: Prepare
       run: |
         sudo port -v install libcxx
-        sudo port -v install cui
 
     - name: Test
       working-directory: devel/eask-cli/
