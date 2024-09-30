@@ -49,7 +49,7 @@ jobs:
       continue-on-error: true
       run: |
         sudo port lint --nitpick
-        sudo port -vst install
+        sudo port -vs install
 
     - name: Show log
       run: |
