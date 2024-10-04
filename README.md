@@ -10,6 +10,8 @@
 
 This repository records Eask CLI's status to each package manager.
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/eask-cli.svg)](https://repology.org/project/eask-cli/versions)
+
 #### 🧪 NPM
 > https://www.npmjs.com/package/@emacs-eask/cli
 
