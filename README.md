@@ -86,7 +86,7 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Winget
 > https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/eask/cli/
 
-![WinGet Package Version](https://img.shields.io/winget/v/eask-cli?logo=webpack)
+[![WinGet Package Version](https://img.shields.io/winget/v/eask-cli?logo=webpack)](https://winget.run/pkg/eask/cli)
 
 ## ⚜️ License
 
