@@ -255,7 +255,7 @@ jobs:
         git add .
         git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
 
-    - name: Push updated formula
+    - name: Push latest checksum
       continue-on-error: true
       uses: jcs090218/github-push-action@master
       with:
