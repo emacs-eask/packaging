@@ -46,10 +46,12 @@
 (defun get-latest-tag ()
   "Return the latest tag (not including pre-release)."
   (require 'github-tags)
-  (let* ((response (cdr (github-tags "emacs-eask/cli")))
-         (tags (plist-get response :names))
-         (latest (nth 1 tags)))  ; Skip the first one since it's the pre-release!
-    latest))
+  (if-let* ((repo "emacs-eask/cli")
+            (response (cdr (github-tags repo)))
+            (tags (plist-get response :names))
+            (latest (nth 1 tags)))  ; Skip the first one since it's the pre-release!
+      latest
+    (user-error "[ERROR] Latest tag not found in repository: %s" repo)))
 
 ;; Local Variables:
 ;; coding: utf-8
