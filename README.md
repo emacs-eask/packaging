@@ -26,7 +26,7 @@ This repository records Eask CLI's status to each package manager.
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 
 #### 🧪 Guix
-> WIP
+> N/A
 
 WIP
 
