@@ -51,6 +51,7 @@
     (description "CLI for building, running, testing, and managing
 your Emacs Lisp dependencies")
     (license license:gpl3+)))
+
 ;;;
 ;;; Avoid adding new packages to the end of this file. To reduce the chances
 ;;; of a merge conflict, place them above in alphabetic order.
