@@ -52,6 +52,8 @@
 your Emacs Lisp dependencies")
     (license license:gpl3+)))
 
+node-eask-cli
+
 ;;;
 ;;; Avoid adding new packages to the end of this file. To reduce the chances
 ;;; of a merge conflict, place them above in alphabetic order.
