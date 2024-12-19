@@ -1,3 +1,13 @@
+(define-module (gnu packages node-xyz)
+  #:use-module ((guix licenses) #:prefix license:)
+  #:use-module (gnu packages sqlite)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages web)
+  #:use-module (guix gexp)
+  #:use-module (guix packages)
+  #:use-module (guix git-download)
+  #:use-module (guix build-system node))
+
 (define-public node-env-variable
   (package
     (name "node-env-variable")
