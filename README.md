@@ -19,6 +19,30 @@ This repository records Eask CLI's status to each package manager.
 [![npm-dt](https://img.shields.io/npm/dt/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 
+#### 🧪 Nix
+> https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask-cli/package.nix
+
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
+[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
+
+#### 🧪 Homebrew
+> https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
+
+[![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
+[![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
+
+-  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
+
+#### 🧪 MacPorts
+> https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
+
+[![MacPorts Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fports.macports.org%2Fapi%2Fv1%2Fports%2Feask-cli%2F&query=%24.version&label=macports)](https://ports.macports.org/port/eask-cli/)
+
+[![Port Check](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml)
+[![Port Update](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml)
+
+- [bitwarden-cli/Portfile](https://github.com/macports/macports-ports/blob/551a0eb9eff6e29b5a91e4da314e6ff2fb6b01d1/security/bitwarden-cli/Portfile) - Use it as the reference!
+
 #### 🧪 Debian
 > https://github.com/emacs-eask/packaging/tree/master/debian
 
@@ -44,30 +68,6 @@ This repository records Eask CLI's status to each package manager.
 [![](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/eask-cli)
 
 - [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
-
-#### 🧪 Nix
-> https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask-cli/package.nix
-
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
-[![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
-
-#### 🧪 Homebrew
-> https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
-
-[![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
-[![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
-
--  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
-
-#### 🧪 MacPorts
-> https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
-
-[![MacPorts Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fports.macports.org%2Fapi%2Fv1%2Fports%2Feask-cli%2F&query=%24.version&label=macports)](https://ports.macports.org/port/eask-cli/)
-
-[![Port Check](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml)
-[![Port Update](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml)
-
-- [bitwarden-cli/Portfile](https://github.com/macports/macports-ports/blob/551a0eb9eff6e29b5a91e4da314e6ff2fb6b01d1/security/bitwarden-cli/Portfile) - Use it as the reference!
 
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
