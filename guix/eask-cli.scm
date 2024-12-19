@@ -43,7 +43,7 @@
         (file-name (git-file-name name version))
         (sha256
          (base32
-          "0nnpxjxfhy4na7fixb7p3ww6ard5xgggfm83b78i333867r4gmsq"))))
+          "1li618smw62xkz4h51accxskdpmg7agj9pvvlzll5kw4sahck9hv"))))
     (build-system node-build-system)
     (arguments '(#:tests? #f)) ; No tests.
     (home-page "https://github.com/emacs-eask/cli")
