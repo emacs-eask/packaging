@@ -25,6 +25,11 @@ This repository records Eask CLI's status to each package manager.
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 
+#### 🧪 Guix
+> WIP
+
+WIP
+
 #### 🧪 Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
