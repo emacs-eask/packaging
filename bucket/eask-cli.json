@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.10.2",
   "description": "Command-line tool for building and testing Emacs Lisp packages",
   "homepage": "https://emacs-eask.github.io/",
   "license": "GPL-3.0-only",
@@ -10,7 +10,7 @@
     },
     "arm64": {
       "url": "https://github.com/emacs-eask/cli/releases/download/0.10.2/eask_0.10.2_win-arm64.zip",
-      "hash": "1ba05af560d0bc19c8800a0f44674f21994f297af16easdasdasd57c4bce00188c8e"
+      "hash": "1ba05af560d0bc19c8800a0f44674f21994f297af16e2bc2c57c4bce00188c8e"
     }
   },
   "bin": "eask.exe",
