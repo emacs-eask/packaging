@@ -7,6 +7,10 @@
         "64bit": {
             "url": "https://github.com/emacs-eask/cli/releases/download/0.10.2/eask_0.10.2_win-x64.zip",
             "hash": "2fcdb9fed6ca51ee8a1c2cbff570b7d71ef174af72f68a71292bf828551b01a6"
+        },
+        "arm64": {
+            "url": "https://github.com/emacs-eask/cli/releases/download/0.10.2/eask_0.10.2_win-arm64.zip",
+            "hash": "1e6d573d35659814d5de8c96eaa2d444941761e597bd4879bd5536f8fb150778"
         }
     },
     "bin": "eask.exe",
@@ -17,6 +21,9 @@
         "architecture": {
             "64bit": {
                 "url": "https://github.com/emacs-eask/cli/releases/download/$version/eask_$version_win-x64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/emacs-eask/cli/releases/download/$version/eask_$version_win-arm64.zip"
             }
         }
     }
