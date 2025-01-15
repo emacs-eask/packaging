@@ -45,6 +45,7 @@ jobs:
       run: |
         eask install-deps --dev
         echo "VERSION=$(eask load scripts/latest-tag.el)" >> $GITHUB_OUTPUT
+        echo "$VERSION"
     
   get-ubuntu:
     needs: [get-version]
