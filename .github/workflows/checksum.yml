@@ -44,7 +44,7 @@ jobs:
       id: expose-ver
       run: |
         eask install-deps --dev
-        echo "VERSION=$(eask load scripts/latest-tag.el)"
+        VERSION=$(eask load scripts/latest-tag.el)
         echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
         echo "$VERSION"
     
