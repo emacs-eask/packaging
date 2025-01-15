@@ -7,7 +7,8 @@
 (let* ((latest (get-latest-tag))
        (version)
        (beg) (end)
-       (data (checksum-data "win-x64" latest)))
+       (x64-data   (checksum-data "win-x64" latest))
+       (arm64-data (checksum-data "win-arm64" latest)))
   (with-find-file "bucket/eask-cli.json"
     (goto-char (point-min))
     (when (search-forward "\"version\": " nil t)
@@ -18,10 +19,18 @@
                  (new-content (string-replace version latest (buffer-string))))
         (erase-buffer)
         (insert new-content)
+        ;; x64
         (goto-char (point-min))
-        (when (search-forward "\"hash\": \"" nil t)
+        (when (and (search-forward "\"64bit\": " nil t)
+                   (search-forward "\"hash\": \"" nil t))
           (delete-region (point) (1- (line-end-position)))
-          (insert (plist-get data :sha256)))
+          (insert (plist-get x64-data :sha256)))
+        ;; arm64
+        (goto-char (point-min))
+        (when (and (search-forward "\"arm64\": " nil t)
+                   (search-forward "\"hash\": \"" nil t))
+          (delete-region (point) (1- (line-end-position)))
+          (insert (plist-get arm64-data :sha256)))
         (save-buffer)
         (message "[INFO] Updated file %s to version %s" tf latest)))))
 
