@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  EMACS_VER: 29.4
+  EMACS_VER: 30.1
 
 jobs:
   get-version:
