@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "packaging"
          "0.0.0"
          "Packaging for Eask CLI")
