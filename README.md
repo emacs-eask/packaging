@@ -81,8 +81,8 @@ WIP
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
-![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/eask-cli?logo=chocolatey)
-![Chocolatey](https://img.shields.io/chocolatey/dt/eask-cli)
+![Chocolatey Version](https://img.shields.io/chocolatey/v/eask-cli?logo=chocolatey)
+![Chocolatey DT](https://img.shields.io/chocolatey/dt/eask-cli)
 
 [![Choco Update](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml)
 
@@ -90,6 +90,8 @@ WIP
 > https://github.com/emacs-eask/packaging/blob/master/bucket/eask-cli.json
 
 > https://github.com/ScoopInstaller/Extras/blob/master/bucket/eask-cli.json
+
+![Scoop Version](https://img.shields.io/scoop/v/eask-cli?bucket=extras)
 
 [![Scoop Install](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml)
 [![Scoop Update](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml)
