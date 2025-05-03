@@ -1,7 +1,9 @@
 @echo off
 
-SET VER=0.11.2
+SET VER=0.11.3
 
 choco pack
 
 choco push eask-cli.%VER%.nupkg -s https://push.chocolatey.org/
+
+timeout 3
