@@ -10,7 +10,7 @@ $packageArgs = @{
   url64bit      = $url64
 
   checksumType  = 'sha256'
-  checksum64    = '37038ef689a687886dcc35f45b9bec2481a8561ff045bef6222458b006ac4c21'
+  checksum64    = 'f3cd7d62c6461e024f634d456770f981bf3694eb3b91acd5ae00b9c9ecbd6535'
 }
 
 Install-ChocolateyZipPackage @packageArgs
