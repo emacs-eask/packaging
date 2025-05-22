@@ -78,6 +78,8 @@ WIP
 #### 🧪 Arch
 > https://github.com/emacs-eask/cli/blob/master/PKGBUILD
 
+> https://aur.archlinux.org/packages/eask-cli-git
+
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
