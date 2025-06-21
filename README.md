@@ -42,7 +42,7 @@ WIP
 #### 🧪 MacPorts
 > https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
 
-[![MacPorts Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fports.macports.org%2Fapi%2Fv1%2Fports%2Feask-cli%2F&query=%24.version&label=macports&logo=macports&logoColor=#1E79E9)](https://ports.macports.org/port/eask-cli/)
+[![MacPorts Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fports.macports.org%2Fapi%2Fv1%2Fports%2Feask-cli%2F&query=%24.version&label=macports&logo=macports&logoColor=white)](https://ports.macports.org/port/eask-cli/)
 
 [![Port Check](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_check.yml)
 [![Port Update](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/port_update.yml)
