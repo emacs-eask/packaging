@@ -36,7 +36,8 @@ WIP
 
 > https://github.com/Homebrew/homebrew-core/blob/main/Formula/e/eask-cli.rb
 
-[![](https://img.shields.io/homebrew/v/eask-cli?logo=homebrew)](https://formulae.brew.sh/formula/eask-cli)
+[![Homebrew Version](https://img.shields.io/homebrew/v/eask-cli?logo=homebrew)](https://formulae.brew.sh/formula/eask-cli)
+![Homebrew Formula Downloads](https://img.shields.io/homebrew/installs/dm/eask-cli)
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
 [![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
@@ -69,7 +70,7 @@ WIP
 #### 🧪 Snap
 > https://snapcraft.io/eask-cli
 
-[![](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft&logoColor=white)](https://snapcraft.io/eask-cli)
+[![Snap Version](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft&logoColor=white)](https://snapcraft.io/eask-cli)
 
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
