@@ -38,6 +38,7 @@ WIP
 
 [![Homebrew Version](https://img.shields.io/homebrew/v/eask-cli?logo=homebrew)](https://formulae.brew.sh/formula/eask-cli)
 ![Homebrew dy](https://img.shields.io/homebrew/installs/dy/eask-cli)
+![Homebrew dq](https://img.shields.io/homebrew/installs/dq/eask-cli)
 ![Homebrew dm](https://img.shields.io/homebrew/installs/dm/eask-cli)
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
