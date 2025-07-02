@@ -2,7 +2,7 @@
 
 Chocolatey install for Eask CLI
 
-## Modifying the package
+## 📨 Modifying the package
 
 - Edit the `eask-cli.nuspec` configuration file.
 - Edit the `./tools/chocolateyInstall.ps1` install script
@@ -17,13 +17,13 @@ Use the `checksum` tool to calculate the sha256 checksum for each of the zip fil
 
 `C:\DirectoryWhereEaskZipIsAt>checksum -f=".\eask_0.6.17_win-x64.zip" -t=sha256`
 
-## Build the package
+## 📦 Build the package
 
 - Run `choco pack` in the same directory as `eask-cli.nuspec`
 
 _Note: If you are running this from a command prompt/powershell prompt, you want to run it as Administrator._
 
-## Test the package
+## 📋 Test the package
 
 _Note: testing should probably be done on a Virtual Machine_
 (See: https://github.com/chocolatey/chocolatey-test-environment)
@@ -46,7 +46,7 @@ _Note: the Chocolatey install path on windows is typically `C:\ProgramData\choco
 After executing the uninstall ensure that `eask.exe` is not found in the Chocoloatey install path. You can also try running `eask --version` from the commandline to see if it is still installed
 
 
-## Publish the package to the Chocolatey community feed repository:
+## 📜 Publish the package to the Chocolatey community feed repository:
 
 - `choco apikey -k [API_KEY_HERE] -source https://push.chocolatey.org/`
 - `choco push eask-cli.[version num].nupkg -s https://push.chocolatey.org/` (package name can be omitted)
