@@ -37,7 +37,8 @@ WIP
 > https://github.com/Homebrew/homebrew-core/blob/main/Formula/e/eask-cli.rb
 
 [![Homebrew Version](https://img.shields.io/homebrew/v/eask-cli?logo=homebrew)](https://formulae.brew.sh/formula/eask-cli)
-![Homebrew Formula Downloads](https://img.shields.io/homebrew/installs/dm/eask-cli)
+![Homebrew dy](https://img.shields.io/homebrew/installs/dy/eask-cli)
+![Homebrew dm](https://img.shields.io/homebrew/installs/dm/eask-cli)
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
 [![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
