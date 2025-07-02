@@ -85,6 +85,8 @@ WIP
 
 > https://aur.archlinux.org/packages/eask-cli-git
 
+[![AUR Version](https://img.shields.io/aur/version/eask-cli-git?logo=archlinux)](https://aur.archlinux.org/packages/eask-cli-git)
+
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
