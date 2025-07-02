@@ -34,7 +34,9 @@ WIP
 #### 🧪 Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
-> https://formulae.brew.sh/formula/eask-cli
+> https://github.com/Homebrew/homebrew-core/blob/main/Formula/e/eask-cli.rb
+
+[![](https://img.shields.io/homebrew/v/eask-cli?logo=homebrew)](https://formulae.brew.sh/formula/eask-cli)
 
 [![Brew Install](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_install.yml)
 [![Brew Update](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/brew_update.yml)
