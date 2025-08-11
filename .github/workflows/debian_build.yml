@@ -25,7 +25,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Expose Version
       id: expose-ver
@@ -46,7 +46,7 @@ jobs:
         - x64
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Expose Arch
       if: matrix.arch == 'x64'

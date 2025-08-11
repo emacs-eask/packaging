@@ -38,7 +38,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Expose Version
       id: expose-ver
@@ -68,7 +68,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
@@ -139,7 +139,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (NPM)
@@ -221,7 +221,7 @@ jobs:
       with:
         version: 'snapshot'
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - uses: suisei-cn/actions-download-file@master
       name: Download Binaries (Target)
