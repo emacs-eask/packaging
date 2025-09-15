@@ -33,6 +33,6 @@ jobs:
       working-directory: ./chocolatey/
       run: |
         choco pack
-        choco install packageName --debug --verbose --source .
+        choco install eask-cli.0.11.7.nupkg --debug --verbose --source .
 
     - run: eask --version
