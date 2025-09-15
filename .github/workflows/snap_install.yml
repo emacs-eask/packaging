@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - '**.yaml'
+      - '**.yml'
       - 'snap/**'
   pull_request:
     branches:
