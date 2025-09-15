@@ -43,6 +43,7 @@ jobs:
         echo "$VERSION"
 
   build:
+    needs: [get-version]
     runs-on: windows-latest
     env:
       VERSION: ${{ needs.get-version.outputs.version }}
