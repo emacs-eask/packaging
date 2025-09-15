@@ -1,0 +1,37 @@
+name: Snap Install
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yaml'
+      - 'snap/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v3
+
+    - uses: actions/checkout@v5
+
+    - name: Install Eask CLI
+      working-directory: ./snap/
+      run: |
+        snapcraft
+        ls
+        snap install eask-cli_0.11.8.snap --dangerous --devmode
+
+    - run: eask --version
