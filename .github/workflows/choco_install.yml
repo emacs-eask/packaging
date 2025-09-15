@@ -1,0 +1,38 @@
+name: Choco Install
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.yml'
+      - 'chocolatey/**'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Install Chocolatey
+      shell: powershell
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+    - uses: actions/checkout@v5
+
+    - name: Install Eask CLI
+      working-directory: ./chocolatey/
+      run: |
+        choco pack
+        choco install packageName --debug --verbose --source .
+
+    - run: eask --version
