@@ -5,9 +5,9 @@ on:
     branches:
       - master
     paths:
+      - 'chocolatey/**'
       - '**.el'
       - '**.yml'
-      - 'chocolatey/**'
   pull_request:
     branches:
       - master

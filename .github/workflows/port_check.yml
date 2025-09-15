@@ -5,8 +5,8 @@ on:
     branches:
       - master
     paths:
-      - '**.yml'
       - 'macports/**'
+      - '**.yml'
   pull_request:
     branches:
       - master

@@ -5,9 +5,9 @@ on:
     branches:
       - master
     paths:
+      - 'checksum/**'
       - '**.yml'
       - '**.el'
-      - 'checksum/**'
   pull_request:
     branches:
       - master

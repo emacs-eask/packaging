@@ -5,9 +5,9 @@ on:
     branches:
       - master
     paths:
+      - 'bucket/**'
       - '**.el'
       - '**.yml'
-      - 'bucket/**'
   pull_request:
     branches:
       - master

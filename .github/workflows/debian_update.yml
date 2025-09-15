@@ -5,9 +5,9 @@ on:
     branches:
       - master
     paths:
+      - 'debian/**'
       - '**.el'
       - '**.yml'
-      - 'debian/**'
   pull_request:
     branches:
       - master
