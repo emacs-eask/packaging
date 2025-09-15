@@ -19,8 +19,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.expose-ver.outputs.VERSION }}
+    steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: ${{ env.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v5
+
+    - name: Expose Version
+      id: expose-ver
+      run: |
+        eask install-deps --dev
+        VERSION=$(eask load scripts/latest-tag.el)
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "$VERSION"
+
   build:
     runs-on: windows-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
     steps:
     - name: Install Chocolatey
       shell: powershell
@@ -33,6 +58,6 @@ jobs:
       working-directory: ./chocolatey/
       run: |
         choco pack
-        choco install eask-cli.0.11.7.nupkg --debug --verbose --source .
+        choco install eask-cli.${{ env.VERSION }}.nupkg --debug --verbose --source .
 
     - run: eask --version
