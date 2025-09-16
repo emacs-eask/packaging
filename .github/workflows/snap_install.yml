@@ -18,8 +18,35 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  EMACS_VER: 30.2
+
 jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.expose-ver.outputs.VERSION }}
+    steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: ${{ env.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v5
+
+    - name: Expose Version
+      id: expose-ver
+      run: |
+        eask install-deps --dev
+        VERSION=$(eask load scripts/latest-tag.el)
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "$VERSION"
+
   build:
+    needs: [get-version]
     runs-on: ubuntu-latest
     steps:
     - name: Install Snapcraft
@@ -32,6 +59,6 @@ jobs:
       run: |
         snapcraft pack
         ls
-        snap install eask-cli_0.11.8.snap --dangerous --devmode
+        snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
     - run: eask --version
