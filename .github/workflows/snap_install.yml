@@ -41,7 +41,7 @@ jobs:
     - name: Install Eask CLI
       working-directory: ./snap/
       run: |
-        sudo chmod 666 snapcraft.yaml
+        chmod +r snapcraft.yaml
         sudo snapcraft pack
         sudo snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
