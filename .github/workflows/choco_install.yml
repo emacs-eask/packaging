@@ -62,6 +62,6 @@ jobs:
       working-directory: ./chocolatey/
       run: |
         choco pack
-        choco install eask-cli.${{ env.VERSION }}.nupkg --debug --verbose --source .
+        choco install eask-cli --version="${{ env.VERSION }}" --source="."
 
     - run: eask --version
