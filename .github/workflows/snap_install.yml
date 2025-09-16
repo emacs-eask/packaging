@@ -30,7 +30,7 @@ jobs:
     - name: Install Eask CLI
       working-directory: ./snap/
       run: |
-        snapcraft
+        snapcraft pack
         ls
         snap install eask-cli_0.11.8.snap --dangerous --devmode
 
