@@ -18,9 +18,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-   contents: write
-
 jobs:
   get-version:
       uses: emacs-eask/packaging/.github/workflows/get_version.yml@master
@@ -44,6 +41,7 @@ jobs:
     - name: Install Eask CLI
       working-directory: ./snap/
       run: |
+        sudo chmod 644 snapcraft.yaml
         sudo snapcraft pack
         sudo snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
