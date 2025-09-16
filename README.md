@@ -94,6 +94,7 @@ WIP
 ![Chocolatey Version](https://img.shields.io/chocolatey/v/eask-cli?logo=chocolatey)
 ![Chocolatey DT](https://img.shields.io/chocolatey/dt/eask-cli)
 
+[![Choco Install](https://github.com/emacs-eask/packaging/actions/workflows/choco_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_install.yml)
 [![Choco Update](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml)
 
 #### 🧪 Scoop
