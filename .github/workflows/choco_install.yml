@@ -26,7 +26,7 @@ jobs:
     needs: [get-version]
     runs-on: windows-latest
     env:
-      VERSION: ${{ needs.get-version.outputs.version }}
+      VERSION: ${{ needs.get-version.get-version.outputs.version }}
     steps:
     - name: Install Chocolatey
       shell: powershell
@@ -39,6 +39,6 @@ jobs:
       working-directory: ./chocolatey/
       run: |
         choco pack
-        choco install eask-cli --version="${{ needs.get-version.outputs.version }}" --source="."
+        choco install eask-cli --version="${{ env.VERSION }}" --source="."
 
     - run: eask --version
