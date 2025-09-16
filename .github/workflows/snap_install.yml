@@ -37,6 +37,7 @@ jobs:
     - name: Prepare
       run: |
         sudo snap install multipass
+        sudo snap restart multipass
 
     - name: Install Eask CLI
       working-directory: ./snap/
