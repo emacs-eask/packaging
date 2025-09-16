@@ -37,12 +37,11 @@ jobs:
     - name: Prepare
       run: |
         sudo snap install multipass
-        sudo snap restart multipass
 
     - name: Install Eask CLI
       working-directory: ./snap/
       run: |
-        snapcraft pack
-        snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
+        sudo snapcraft pack
+        sudo snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
     - run: eask --version
