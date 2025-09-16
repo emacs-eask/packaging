@@ -39,6 +39,6 @@ jobs:
       working-directory: ./chocolatey/
       run: |
         choco pack
-        choco install eask-cli --version="${{ env.VERSION }}" --source="."
+        choco install eask-cli --version="${{ needs.get-version.outputs.version }}" --source="."
 
     - run: eask --version

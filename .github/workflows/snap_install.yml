@@ -32,9 +32,9 @@ jobs:
     - uses: actions/checkout@v5
 
     - name: Install Eask CLI
+      working-directory: ./snap/
       run: |
         snapcraft pack
-        ls
         snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
     - run: eask --version
