@@ -23,27 +23,7 @@ env:
 
 jobs:
   get-version:
-    runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.expose-ver.outputs.VERSION }}
-    steps:
-    - uses: jcs090218/setup-emacs@master
-      with:
-        version: ${{ env.EMACS_VER }}
-
-    - uses: emacs-eask/setup-eask@master
-      with:
-        version: 'snapshot'
-
-    - uses: actions/checkout@v5
-
-    - name: Expose Version
-      id: expose-ver
-      run: |
-        eask install-deps --dev
-        VERSION=$(eask load scripts/latest-tag.el)
-        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-        echo "$VERSION"
+      uses: emacs-eask/packaging/.github/workflows/get_version.yml@master
 
   build:
     needs: [get-version]
