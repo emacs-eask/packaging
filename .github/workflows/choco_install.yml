@@ -18,12 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  EMACS_VER: 30.2
-
 jobs:
   get-version:
-  uses: emacs-eask/packaging/.github/workflows/get_version.yml@master
+      uses: emacs-eask/packaging/.github/workflows/get_version.yml@master
 
   build:
     needs: [get-version]
