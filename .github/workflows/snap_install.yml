@@ -25,6 +25,9 @@ jobs:
   build:
     needs: [get-version]
     runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
+
     steps:
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v3
