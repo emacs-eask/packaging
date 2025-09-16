@@ -2,14 +2,16 @@ name: Get Version
 
 on:
   workflow_call:
+    outputs:
+      version:
+        description: The latest Eask Version
+        value: ${{ steps.get-version.outputs.VERSION }}
     inputs:
       workflow_ref:
         description: 'Must be the same as "uses: ...@THIS"'
         default: master
         required: false
         type: string
-    outputs:
-      version: ${{ steps.get-version.outputs.VERSION }}
 
 env:
   EMACS_VER: 30.2
