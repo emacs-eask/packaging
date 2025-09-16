@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   get-version:
-      uses: emacs-eask/packaging/.github/workflows/get_version.yml@master
+      uses: emacs-eask/packaging/.github/workflows/share/get_version.yml@master
 
   build:
     needs: [get-version]
