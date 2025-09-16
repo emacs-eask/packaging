@@ -18,6 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  EMACS_VER: 30.2
+
 jobs:
   get-version:
     runs-on: ubuntu-latest
