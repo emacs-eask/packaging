@@ -74,6 +74,7 @@ WIP
 
 [![Snap Version](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft&logoColor=white)](https://snapcraft.io/eask-cli)
 
+[![Snap Install](https://github.com/emacs-eask/packaging/actions/workflows/snap_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_install.yml)
 [![Snap Update](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/snap_update.yml)
 
 [![](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/eask-cli)
