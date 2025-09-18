@@ -19,5 +19,6 @@ parts:
   eask-cli:
     plugin: npm
     npm-node-version: 20.16.0
+    npm-include-node: true
     source: https://github.com/emacs-eask/cli
     source-type: git
