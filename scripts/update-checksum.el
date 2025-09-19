@@ -91,9 +91,9 @@
       (write-region base nil file)))
 
   ;; Size
-  (progn
-    (message "size: %s" size)
-    (write-region size nil (concat parent "size"))))
+  (let ((file (concat parent "size")))
+    (message "%s: %s" file size)
+    (write-region size nil file)))
 
 ;; Local Variables:
 ;; coding: utf-8

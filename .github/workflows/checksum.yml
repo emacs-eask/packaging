@@ -153,7 +153,7 @@ jobs:
 
     - name: Update checksum info
       run: |
-        brew install openssl
+        brew install openssl coreutils
         eask install-deps
         eask run script update-checksum
 
