@@ -23,6 +23,13 @@
   "Return FILENAME's string."
   (with-temp-buffer (insert-file-contents filename) (buffer-string)))
 
+(defun remove-base-padding (base)
+  "Remove equal signs padding from BASE."
+  (string-replace "=" "" base))
+
+;;
+;;; checksum
+
 (defun checksum-zip (type version)
   "Return checksum zip path."
   (pcase type
@@ -40,8 +47,8 @@
          (rmd160/base32 (format "checksum/%s/%s/rmd160/base32" version zip))
          (rmd160/base64 (format "checksum/%s/%s/rmd160/base64" version zip))
          (sha256/hex    (format "checksum/%s/%s/sha256/hex"    version zip))
-         (sha256/base32 (format "checksum/%s/%s/rmd160/base32" version zip))
-         (sha256/base64 (format "checksum/%s/%s/rmd160/base64" version zip))
+         (sha256/base32 (format "checksum/%s/%s/sha256/base32" version zip))
+         (sha256/base64 (format "checksum/%s/%s/sha256/base64" version zip))
          (size          (format "checksum/%s/%s/size"          version zip)))
     `( :sha256/hex    ,(string-trim (file-to-string sha256/hex))
        :sha256/base32 ,(string-trim (file-to-string sha256/base32))

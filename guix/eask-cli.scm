@@ -1,7 +1,7 @@
 (define-public node-eask-cli
   (package
     (name "node-eask-cli")
-    (version "0.11.7")
+    (version "0.11.8")
     (source
       (origin
         (method git-fetch)
