@@ -69,7 +69,7 @@
 
   ;; SHA-256
   (let* ((root (concat parent "sha256/"))
-         (hex (string-trim sha256)))
+         (hex  (string-trim sha256)))
     (ignore-errors (make-directory dir t))
     ;; Hex
     (let ((file (concat root "hex")))
