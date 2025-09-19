@@ -29,7 +29,7 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Guix
 > N/A
 
-WIP
+[![Guix Update](https://github.com/emacs-eask/packaging/actions/workflows/guix_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/guix_update.yml)
 
 #### 🧪 Homebrew
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
