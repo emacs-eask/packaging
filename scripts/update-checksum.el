@@ -20,11 +20,15 @@
       (:sha256 (format "certutil -hashfile %s SHA256" zip))
       (:rmd160 (format "echo Not supported" zip))))))
 
+(defun sh-cmd-to-str (cmd)
+  "Like the function `shell-command-to-string' but trim the CMD output."
+  (string-trim (shell-command-to-string cmd)))
+
 (defun hex-to-base-x (hex base)
   "Convert HEX string to BASE."
   (let ((base (if (stringp base) base
                 (substring (eask-2str base) 1))))  ; Accept keyword.
-    (shell-command-to-string (format "echo %s | xxd -r -p | %s" hex base))))
+    (sh-cmd-to-str (format "echo %s | xxd -r -p | %s" hex base))))
 
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
@@ -43,14 +47,14 @@
        (zip    (getenv "EASK_ZIP"))
        (dir    (file-name-nondirectory zip))
        (parent (format "./checksum/%s/%s/" ver dir))
-       (rmd160 (shell-command-to-string (openssl-command :rmd160 zip)))
+       (rmd160 (sh-cmd-to-str (openssl-command :rmd160 zip)))
        (rmd160 (openssl-parse-output :rmd160 rmd160))
-       (sha256 (shell-command-to-string (openssl-command :sha256 zip)))
+       (sha256 (sh-cmd-to-str (openssl-command :sha256 zip)))
        (sha256 (openssl-parse-output :sha256 sha256))
        (size   (file-size zip)))
   ;; RMD-160
   (let* ((root (concat parent "rmd160/"))
-         (hex  (string-trim rmd160)))
+         (hex  rmd160))
     (ignore-errors (make-directory root t))
     ;; Hex
     (let ((file (concat root "hex")))
@@ -69,7 +73,7 @@
 
   ;; SHA-256
   (let* ((root (concat parent "sha256/"))
-         (hex  (string-trim sha256)))
+         (hex  sha256))
     (ignore-errors (make-directory root t))
     ;; Hex
     (let ((file (concat root "hex")))
@@ -88,8 +92,8 @@
 
   ;; Size
   (progn
-    (message "size: %s"   (string-trim size))
-    (write-region size   nil (concat parent "size"))))
+    (message "size: %s" size)
+    (write-region size nil (concat parent "size"))))
 
 ;; Local Variables:
 ;; coding: utf-8
