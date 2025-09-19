@@ -35,13 +35,21 @@
 
 (defun checksum-data (type version)
   "Return checksum data from TYPE and eask's VERSION."
-  (let* ((zip (checksum-zip type version))
-         (sha256 (format "checksum/%s/%s/sha256" version zip))
-         (rmd160 (format "checksum/%s/%s/rmd160" version zip))
-         (size   (format "checksum/%s/%s/size" version zip)))
-    `( :sha256 ,(string-trim (file-to-string sha256))
-       :rmd160 ,(string-trim (file-to-string rmd160))
-       :size   ,(string-trim (file-to-string size)))))
+  (let* ((zip           (checksum-zip type version))
+         (rmd160/hex    (format "checksum/%s/%s/rmd160/hex" version zip))
+         (rmd160/base32 (format "checksum/%s/%s/rmd160/base32" version zip))
+         (rmd160/base64 (format "checksum/%s/%s/rmd160/base64" version zip))
+         (sha256/hex    (format "checksum/%s/%s/sha256/hex" version zip))
+         (sha256/base32 (format "checksum/%s/%s/rmd160/base32" version zip))
+         (sha256/base64 (format "checksum/%s/%s/rmd160/base64" version zip))
+         (size          (format "checksum/%s/%s/size" version zip)))
+    `( :sha256/hex    ,(string-trim (file-to-string sha256/hex))
+       :sha256/base32 ,(string-trim (file-to-string sha256/base32))
+       :sha256/base64 ,(string-trim (file-to-string sha256/base64))
+       :rmd160/hex    ,(string-trim (file-to-string rmd160/hex))
+       :rmd160/base32 ,(string-trim (file-to-string rmd160/base32))
+       :rmd160/base64 ,(string-trim (file-to-string rmd160/base64))
+       :size          ,(string-trim (file-to-string size)))))
 
 (defun get-latest-tag ()
   "Return the latest tag (not including pre-release)."

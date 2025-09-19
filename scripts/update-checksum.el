@@ -20,6 +20,12 @@
       (:sha256 (format "certutil -hashfile %s SHA256" zip))
       (:rmd160 (format "echo Not supported" zip))))))
 
+(defun hex-to-base-x (hex base)
+  "Convert HEX string to BASE."
+  (let ((base (if (stringp base) base
+                (substring (eask-2str base) 1))))  ; Accept keyword.
+    (shell-command-to-string (format "echo %s | xxd -r -p | %s" hex base))))
+
 (defun openssl-parse-output (type output)
   "Extract hash from OUTPUT by TYPE."
   (cond
@@ -42,13 +48,48 @@
        (sha256 (shell-command-to-string (openssl-command :sha256 zip)))
        (sha256 (openssl-parse-output :sha256 sha256))
        (size   (file-size zip)))
-  (ignore-errors (make-directory parent t))
-  (message "sha256: %s" (string-trim sha256))
-  (message "rmd160: %s" (string-trim rmd160))
-  (message "size: %s"   (string-trim size))
-  (write-region rmd160 nil (concat parent "rmd160"))
-  (write-region sha256 nil (concat parent "sha256"))
-  (write-region size   nil (concat parent "size")))
+  ;; RMD-160
+  (let* ((root (concat parent "rmd160/"))
+         (hex  (string-trim rmd160)))
+    (ignore-errors (make-directory dir t))
+    ;; Hex
+    (let ((file (concat root "hex")))
+      (message "%s: %s" file hex)
+      (write-region hex nil file))
+    ;; Base32
+    (let ((file (concat root "base32"))
+          (base (hex-to-base-x hex :base32)))
+      (message "%s: %s" file base)
+      (write-region base nil file))
+    ;; Base64
+    (let ((file (concat root "base64"))
+          (base (hex-to-base-x hex :base64)))
+      (message "%s: %s" file base)
+      (write-region base nil file)))
+
+  ;; SHA-256
+  (let* ((root (concat parent "sha256/"))
+         (hex (string-trim sha256)))
+    (ignore-errors (make-directory dir t))
+    ;; Hex
+    (let ((file (concat root "hex")))
+      (message "%s: %s" file hex)
+      (write-region hex nil file))
+    ;; Base32
+    (let ((file (concat root "base32"))
+          (base (hex-to-base-x hex :base32)))
+      (message "%s: %s" file base)
+      (write-region base nil file))
+    ;; Base64
+    (let ((file (concat root "base64"))
+          (base (hex-to-base-x hex :base64)))
+      (message "%s: %s" file base)
+      (write-region base nil file)))
+
+  ;; Size
+  (progn
+    (message "size: %s"   (string-trim size))
+    (write-region size   nil (concat parent "size"))))
 
 ;; Local Variables:
 ;; coding: utf-8

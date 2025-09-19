@@ -27,11 +27,11 @@
       (goto-char (point-min))
       (when (search-forward "checksum      = '" nil t)
         (delete-region (point) (1- (line-end-position)))
-        (insert (plist-get data :sha256)))
+        (insert (plist-get data :sha256/hex)))
       (goto-char (point-min))
       (when (search-forward "checksum64    = '" nil t)
         (delete-region (point) (1- (line-end-position)))
-        (insert (plist-get data :sha256)))
+        (insert (plist-get data :sha256/hex)))
       (save-buffer))))
 
 ;; Local Variables:

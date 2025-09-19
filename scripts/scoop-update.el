@@ -24,13 +24,13 @@
         (when (and (search-forward "\"64bit\": " nil t)
                    (search-forward "\"hash\": \"" nil t))
           (delete-region (point) (1- (line-end-position)))
-          (insert (plist-get x64-data :sha256)))
+          (insert (plist-get x64-data :sha256/hex)))
         ;; arm64
         (goto-char (point-min))
         (when (and (search-forward "\"arm64\": " nil t)
                    (search-forward "\"hash\": \"" nil t))
           (delete-region (point) (1- (line-end-position)))
-          (insert (plist-get arm64-data :sha256)))
+          (insert (plist-get arm64-data :sha256/hex)))
         (save-buffer)
         (message "[INFO] Updated file %s to version %s" tf latest)))))
 

@@ -21,7 +21,7 @@
         (goto-char (point-min))
         (when (search-forward "sha256 \"" nil t)
           (delete-region (point) (1- (line-end-position)))
-          (insert (plist-get data :sha256)))
+          (insert (plist-get data :sha256/hex)))
         (save-buffer)
         (message "[INFO] Updated file %s to version %s" tf latest)))))
 
