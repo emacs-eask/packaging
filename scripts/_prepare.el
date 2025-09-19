@@ -25,9 +25,9 @@
 
 (defun checksum-zip (type version)
   "Return checksum zip path."
-  (cl-case type
-    (`npm (format "cli-%s.tgz" version))
-    (t
+  (pcase type
+    ("npm" (format "cli-%s.tgz" version))
+    (_
      (cond ((string-match-p "win" type)
             (format "eask_%s_%s.zip" version type))
            (t

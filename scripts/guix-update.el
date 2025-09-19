@@ -1,4 +1,4 @@
-;;; brew-update.el --- Update Homebrew formula  -*- lexical-binding: t -*-
+;;; guix-update.el --- Update GUIX scm  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -7,21 +7,24 @@
 (let* ((latest (get-latest-tag))
        (version)
        (beg) (end)
-       (data (checksum-data "npm" latest)))
-  (with-find-file "Formula/eask-cli.rb"
+       (npm-data (checksum-data "npm" latest)))
+  (with-find-file "guix/eask-cli.scm"
     (goto-char (point-min))
-    (when (search-forward "version " nil t)
+    (when (search-forward "(version " nil t)
       (when-let* ((beg (1+ (point)))
-                  (end (1- (line-end-position)))
+                  (end (- (line-end-position) 2))
                   (version (buffer-substring beg end))
                   (_ (not (string= version latest)))
                   (new-content (string-replace version latest (buffer-string))))
         (erase-buffer)
         (insert new-content)
+        ;; node
         (goto-char (point-min))
-        (when (search-forward "sha256 \"" nil t)
-          (delete-region (point) (1- (line-end-position)))
-          (insert (plist-get data :sha256/hex)))
+        (message "??? %s" (plist-get npm-data :sha256/base32))
+        (when (and (search-forward "(base32 " nil t)
+                   (search-forward "\"" nil t))
+          (delete-region (point) (- (line-end-position) 5))
+          (insert (plist-get npm-data :sha256/base32)))
         (save-buffer)
         (message "[INFO] Updated file %s to version %s" tf latest)))))
 
@@ -29,4 +32,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; brew-update.el ends here
+;;; guix-update.el ends here

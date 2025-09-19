@@ -15,6 +15,7 @@
 (script "port-update"     "eask load scripts/port-update.el")
 (script "choco-update"    "eask load scripts/choco-update.el")
 (script "scoop-update"    "eask load scripts/scoop-update.el")
+(script "guix-update"     "eask load scripts/guix-update.el")
 
 (source 'gnu)
 (source 'melpa)

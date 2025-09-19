@@ -12,11 +12,11 @@
   (with-find-file "bucket/eask-cli.json"
     (goto-char (point-min))
     (when (search-forward "\"version\": " nil t)
-      (when-let ((beg (1+ (point)))
-                 (end (- (line-end-position) 2))
-                 (version (buffer-substring beg end))
-                 (_ (not (string= version latest)))
-                 (new-content (string-replace version latest (buffer-string))))
+      (when-let* ((beg (1+ (point)))
+                  (end (- (line-end-position) 2))
+                  (version (buffer-substring beg end))
+                  (_ (not (string= version latest)))
+                  (new-content (string-replace version latest (buffer-string))))
         (erase-buffer)
         (insert new-content)
         ;; x64
