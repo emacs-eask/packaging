@@ -51,7 +51,7 @@
   ;; RMD-160
   (let* ((root (concat parent "rmd160/"))
          (hex  (string-trim rmd160)))
-    (ignore-errors (make-directory dir t))
+    (ignore-errors (make-directory root t))
     ;; Hex
     (let ((file (concat root "hex")))
       (message "%s: %s" file hex)
@@ -70,7 +70,7 @@
   ;; SHA-256
   (let* ((root (concat parent "sha256/"))
          (hex  (string-trim sha256)))
-    (ignore-errors (make-directory dir t))
+    (ignore-errors (make-directory root t))
     ;; Hex
     (let ((file (concat root "hex")))
       (message "%s: %s" file hex)
