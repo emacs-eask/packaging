@@ -23,7 +23,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Install MacPorts
-      uses: melusina-org/setup-macports@v1.1.4
+      uses: melusina-org/setup-macports@v1.1.5
 
     - uses: actions/checkout@v5
 
