@@ -25,14 +25,14 @@ jobs:
     - name: Install MacPorts
       uses: melusina-org/setup-macports@v1.1.5
 
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
 
     - name: Copy Portfile to ~/
       run: |
         cp ./macports/Portfile ~/
 
     - name: Checkout MacPorts
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         repository: 'macports/macports-ports'
 
