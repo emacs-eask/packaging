@@ -88,7 +88,7 @@ jobs:
 
     - name: Push updated deb package
       continue-on-error: true
-      uses: jcs090218/github-push-action@master
+      uses: jcs-actions/github-push-action@master
       with:
         branch: master
         rebase: true
