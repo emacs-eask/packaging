@@ -15,7 +15,7 @@ This repository records Eask CLI's status to each package manager.
 
 💡 **NOTE:** The checksum will refresh every `6` hour(s).
 
-#### 🧪 NPM
+#### 🧪 npm
 > https://www.npmjs.com/package/@emacs-eask/cli
 
 [![npm](https://img.shields.io/npm/v/@emacs-eask/cli?logo=npm&color=green)](https://www.npmjs.com/package/@emacs-eask/cli)
