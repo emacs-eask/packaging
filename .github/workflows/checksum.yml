@@ -85,7 +85,7 @@ jobs:
         git add .
         git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
 
-    - name: Push updated formula
+    - name: Push updated checksum
       continue-on-error: true
       uses: jcs-actions/github-push-action@master
       with:
@@ -173,7 +173,7 @@ jobs:
         git add .
         git commit -m "Update checksum ${{ env.EASK_ZIP }}/**"
 
-    - name: Push updated formula
+    - name: Push updated checksum
       continue-on-error: true
       uses: jcs-actions/github-push-action@master
       with:
