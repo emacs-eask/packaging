@@ -39,6 +39,9 @@ jobs:
         version: ${{ matrix.emacs-version }}
 
     - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
+        fetch-depth: 1
 
     - name: Prepare Eask (Unix)
       if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'

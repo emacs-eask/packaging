@@ -26,6 +26,9 @@ jobs:
         version: 'snapshot'
 
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+        fetch-depth: 1
 
     - name: Expose Version
       id: expose-ver
@@ -47,6 +50,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+        fetch-depth: 1
 
     - name: Expose Arch
       if: matrix.arch == 'x64'
