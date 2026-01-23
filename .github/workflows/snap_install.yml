@@ -49,4 +49,4 @@ jobs:
         sudo snap alias eask-cli.eask eask
         echo "/snap/bin" >> $GITHUB_PATH
 
-    - run: eask-cli --version
+    - run: eask --version
