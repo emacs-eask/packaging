@@ -48,7 +48,7 @@ jobs:
     - name: Install Eask CLI
       working-directory: ./snap/
       run: |
-        sudo snapcraft pack
-        sudo snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
+        snapcraft pack
+        snap install eask-cli_${{ env.VERSION }}.snap --dangerous --devmode
 
     - run: eask --version
