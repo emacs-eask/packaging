@@ -45,12 +45,14 @@ jobs:
       run: |
         chmod 644 snap/snapcraft.yaml
 
-    - name: Build snap
+    - name: Build Snap
+      working-directory: ./snap/
       run: |
-        snapcraft --use-lxd
+        # --destructive-mode prevents the need for Multipass/LXD
+        sg snapcraft -c "snapcraft pack --destructive-mode"
 
-    - name: Install built snap
+    - name: Install and Verify
       run: |
-        sudo snap install *.snap --dangerous --devmode
+        sudo snap install snap/*.snap --dangerous --devmode
 
     - run: eask --version
