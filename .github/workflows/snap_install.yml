@@ -40,6 +40,9 @@ jobs:
     - name: Prepare
       run: |
         sudo snap install multipass
+
+    - name: Change permission
+      run: |
         chmod 755 snap/snapcraft.yaml
 
     - name: Install Eask CLI
