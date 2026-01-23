@@ -12,7 +12,7 @@ base: core20
 confinement: strict
 
 apps:
-  eask-cli:
+  eask:
     command: bin/eask
 
 parts:
