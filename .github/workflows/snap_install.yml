@@ -37,21 +37,13 @@ jobs:
         persist-credentials: false
         fetch-depth: 1
 
-    - name: Prepare
-      run: |
-        sudo snap install multipass
-
-    - name: Change permission
-      run: |
-        chmod 644 snap/snapcraft.yaml
-
     - name: Build Snap
       working-directory: ./snap/
       run: |
-        # --destructive-mode prevents the need for Multipass/LXD
         sudo snapcraft pack --destructive-mode
 
     - name: Install built snap
+      working-directory: ./snap/
       run: |
         sudo snap install snap/*.snap --dangerous --devmode
 
