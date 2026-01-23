@@ -49,9 +49,9 @@ jobs:
       working-directory: ./snap/
       run: |
         # --destructive-mode prevents the need for Multipass/LXD
-        sg snapcraft -c "snapcraft pack --destructive-mode"
+        sudo snapcraft pack --destructive-mode
 
-    - name: Install and Verify
+    - name: Install built snap
       run: |
         sudo snap install snap/*.snap --dangerous --devmode
 
