@@ -42,9 +42,11 @@ jobs:
       run: |
         sudo snapcraft pack --destructive-mode
 
-    - name: Install built snap
+    - name: Install and Alias
       working-directory: ./snap/
       run: |
         sudo snap install *.snap --dangerous --devmode
+        sudo snap alias eask-cli.eask eask
+        echo "/snap/bin" >> $GITHUB_PATH
 
     - run: eask-cli --version
