@@ -45,6 +45,6 @@ jobs:
     - name: Install built snap
       working-directory: ./snap/
       run: |
-        sudo snap install snap/*.snap --dangerous --devmode
+        sudo snap install *.snap --dangerous --devmode
 
-    - run: eask --version
+    - run: /snap/bin/eask --version
