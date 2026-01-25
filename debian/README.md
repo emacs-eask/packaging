@@ -1,6 +1,6 @@
 ## Usage
 
-```
+```console
 sudo curl -SsL -o /etc/apt/trusted.gpg.d/easksource.gpg https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/KEY.gpg
 sudo curl -SsL -o /etc/apt/sources.list.d/easksource.list https://raw.githubusercontent.com/emacs-eask/packaging/master/debian/easksource.list
 sudo apt update --allow-insecure-repositories
@@ -9,7 +9,7 @@ sudo apt install eask-cli --allow-unauthenticated
 
 ## Export GPG key in ASCII armored version
 
-```
+```console
 gpg --armor --export-secret-key D0CF12A37328A46974F4DA35B6121C7BD46BDEE5
 ```
 
