@@ -1,7 +1,7 @@
 (define-public node-eask-cli
   (package
     (name "node-eask-cli")
-    (version "0.12.5")
+    (version "0.12.6")
     (source
       (origin
         (method git-fetch)
@@ -11,7 +11,7 @@
         (file-name (git-file-name name version))
         (sha256
          (base32
-          "KN5BATTF74IPUVPZNC3COFD7EXTAL5XXXTWWCBUADQ7B3KFUMASA"))))
+          "KHVIF36T3OXGZWLIT5MFBSEJLJ7C3THW2FVZII3SZH4G4EBW2ZLA"))))
     (build-system node-build-system)
     (arguments '(#:tests? #f))
     (home-page "https://emacs-eask.github.io/")
