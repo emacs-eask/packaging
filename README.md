@@ -71,7 +71,7 @@ This repository records Eask CLI's status to each package manager.
 - [Creating Debian/Ubuntu .deb packages](https://www.iodigital.com/en/history/intracto/creating-debianubuntu-deb-packages)
 - [dpkg-deb treats my architeceture as amd64 instead of x86)64](https://unix.stackexchange.com/questions/667735/dpkg-deb-treats-my-architeceture-as-amd64-instead-of-x8664)
 
-### Fedora (Linux)
+#### 🧪 Fedora (Linux)
 > https://src.fedoraproject.org/rpms/eask
 
 #### 🧪 Snap (Linux)
