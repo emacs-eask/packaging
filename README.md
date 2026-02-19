@@ -74,6 +74,8 @@ This repository records Eask CLI's status to each package manager.
 #### 🧪 Fedora (Linux)
 > https://src.fedoraproject.org/rpms/eask
 
+[![Fedora Version](https://img.shields.io/fedora/v/eask?logo=fedora)](https://packages.fedoraproject.org/pkgs/eask/eask/)
+
 #### 🧪 Snap (Linux)
 > https://snapcraft.io/eask-cli
 
