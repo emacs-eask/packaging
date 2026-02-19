@@ -15,25 +15,25 @@ This repository records Eask CLI's status to each package manager.
 
 💡 **NOTE:** The checksum will refresh every `6` hour(s).
 
-#### 🧪 npm
+#### 🧪 npm (Cross-platform)
 > https://www.npmjs.com/package/@emacs-eask/cli
 
 [![npm](https://img.shields.io/npm/v/@emacs-eask/cli?logo=npm&color=green)](https://www.npmjs.com/package/@emacs-eask/cli)
 [![npm-dt](https://img.shields.io/npm/dt/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 [![npm-dm](https://img.shields.io/npm/dm/@emacs-eask/cli.svg)](https://npmcharts.com/compare/@emacs-eask/cli?minimal=true)
 
-#### 🧪 Nix
+#### 🧪 Nix (macOS or Linux)
 > https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ea/eask-cli/package.nix
 
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-light.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 [![](https://raw.githubusercontent.com/dch82/Nixpkgs-Badges/main/nixpkgs-badge-dark.svg)](https://search.nixos.org/packages?size=1&show=eask-cli)
 
-#### 🧪 Guix
+#### 🧪 Guix (macOS or Linux)
 > N/A
 
 [![Guix Update](https://github.com/emacs-eask/packaging/actions/workflows/guix_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/guix_update.yml)
 
-#### 🧪 Homebrew
+#### 🧪 Homebrew (macOS or Linux)
 > https://github.com/emacs-eask/packaging/blob/master/Formula/eask-cli.rb
 
 > https://github.com/Homebrew/homebrew-core/blob/main/Formula/e/eask-cli.rb
@@ -48,7 +48,7 @@ This repository records Eask CLI's status to each package manager.
 
 -  [How to publish your NodeJS application on Homebrew?](https://bharathvaj.me/blog/how-to-publish-your-nodejs-project-on-homebrew)
 
-#### 🧪 MacPorts
+#### 🧪 MacPorts (macOS)
 > https://github.com/macports/macports-ports/blob/master/devel/eask-cli/Portfile
 
 [![MacPorts Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fports.macports.org%2Fapi%2Fv1%2Fports%2Feask-cli%2F&query=%24.version&label=macports&logo=macports&logoColor=white)](https://ports.macports.org/port/eask-cli/)
@@ -58,7 +58,7 @@ This repository records Eask CLI's status to each package manager.
 
 - [bitwarden-cli/Portfile](https://github.com/macports/macports-ports/blob/551a0eb9eff6e29b5a91e4da314e6ff2fb6b01d1/security/bitwarden-cli/Portfile) - Use it as the reference!
 
-#### 🧪 Debian
+#### 🧪 Debian (Linux)
 > https://github.com/emacs-eask/packaging/tree/master/debian
 
 [![Debian Update](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/debian_update.yml)
@@ -71,7 +71,10 @@ This repository records Eask CLI's status to each package manager.
 - [Creating Debian/Ubuntu .deb packages](https://www.iodigital.com/en/history/intracto/creating-debianubuntu-deb-packages)
 - [dpkg-deb treats my architeceture as amd64 instead of x86)64](https://unix.stackexchange.com/questions/667735/dpkg-deb-treats-my-architeceture-as-amd64-instead-of-x8664)
 
-#### 🧪 Snap
+### Fedora (Linux)
+> https://src.fedoraproject.org/rpms/eask
+
+#### 🧪 Snap (Linux)
 > https://snapcraft.io/eask-cli
 
 [![Snap Version](https://img.shields.io/snapcraft/v/eask-cli/latest/stable?logo=snapcraft&logoColor=white)](https://snapcraft.io/eask-cli)
@@ -84,17 +87,14 @@ This repository records Eask CLI's status to each package manager.
 
 - [Code References](https://github.com/search?q=path%3Asnapcraft.yaml+%22plugin%3A+npm%22&type=Code&p=2)
 
-#### 🧪 Arch
+#### 🧪 Arch (Linux)
 > https://github.com/emacs-eask/cli/blob/master/PKGBUILD
 
 > https://aur.archlinux.org/packages/eask-cli-git
 
 [![AUR Version](https://img.shields.io/aur/version/eask-cli-git?logo=archlinux)](https://aur.archlinux.org/packages/eask-cli-git)
 
-### Fedora
-> https://src.fedoraproject.org/rpms/eask
-
-#### 🧪 Chocolatey
+#### 🧪 Chocolatey (Windows)
 > https://community.chocolatey.org/packages/eask-cli
 
 ![Chocolatey Version](https://img.shields.io/chocolatey/v/eask-cli?logo=chocolatey)
@@ -103,7 +103,7 @@ This repository records Eask CLI's status to each package manager.
 [![Choco Install](https://github.com/emacs-eask/packaging/actions/workflows/choco_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_install.yml)
 [![Choco Update](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/choco_update.yml)
 
-#### 🧪 Scoop
+#### 🧪 Scoop (Windows)
 > https://github.com/emacs-eask/packaging/blob/master/bucket/eask-cli.json
 
 > https://github.com/ScoopInstaller/Extras/blob/master/bucket/eask-cli.json
@@ -113,7 +113,7 @@ This repository records Eask CLI's status to each package manager.
 [![Scoop Install](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_install.yml)
 [![Scoop Update](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml/badge.svg)](https://github.com/emacs-eask/packaging/actions/workflows/scoop_update.yml)
 
-#### 🧪 Winget
+#### 🧪 Winget (Windows)
 > https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/eask/cli/
 
 [![WinGet Package Version](https://img.shields.io/winget/v/eask.cli?logo=webpack)](https://winget.run/pkg/eask/cli)
