@@ -91,6 +91,9 @@ This repository records Eask CLI's status to each package manager.
 
 [![AUR Version](https://img.shields.io/aur/version/eask-cli-git?logo=archlinux)](https://aur.archlinux.org/packages/eask-cli-git)
 
+### Fedora
+> https://src.fedoraproject.org/rpms/eask
+
 #### 🧪 Chocolatey
 > https://community.chocolatey.org/packages/eask-cli
 
