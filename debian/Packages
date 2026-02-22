@@ -630,20 +630,6 @@ Description: CLI for building, runing, testing, and managing your Emacs Lisp dep
 
 Package: eask-cli
 Version: 0.12.8
-Architecture: arm64
-Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
-Installed-Size: 16528659
-Filename: ./eask_0.12.9_arm64.deb
-Size: 19841846
-MD5sum: 75c79c460119e86036c8fbf7bb36bb1e
-SHA1: 17fa2aab0a60f87c7c5fa8e01249771ca1302324
-SHA256: a56e3db902b87596ba490e3c9d167dd0b7038c422c41af678d5f7681a9106956
-Priority: optional
-Homepage: https://github.com/emacs-eask/cli
-Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
-
-Package: eask-cli
-Version: 0.12.8
 Architecture: amd64
 Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
 Installed-Size: 16918026
@@ -657,15 +643,29 @@ Homepage: https://github.com/emacs-eask/cli
 Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
 
 Package: eask-cli
-Version: 0.12.8
+Version: 0.12.9
+Architecture: arm64
+Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
+Installed-Size: 16528659
+Filename: ./eask_0.12.9_arm64.deb
+Size: 19841642
+MD5sum: a95acd2f74856bbb1304d9c21520faa1
+SHA1: ec33e4fda40d384350ec927916632d667de8d636
+SHA256: 0d15bb5a372512b427f074998e656f05883054731e65d07ce325b4129fcd2145
+Priority: optional
+Homepage: https://github.com/emacs-eask/cli
+Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
+
+Package: eask-cli
+Version: 0.12.9
 Architecture: amd64
 Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
 Installed-Size: 16918026
 Filename: ./eask_0.12.9_amd64.deb
-Size: 20095932
-MD5sum: 0d54955f2f8fbf6bd7dd48ffb9dc6316
-SHA1: d4c77f124244eb04617f143bceaec500f990aa93
-SHA256: 7678e9c21f7de4153f81abef794d00f8bae9ccbb1c5fda69f0d7d60883794fa9
+Size: 20096294
+MD5sum: 8e6077e5829aaf2d67792a1489191e11
+SHA1: acf12b6b795f6d790efa4ce5a2f6684e3736d607
+SHA256: de471a86a52f99af0fcdfae45b5221b661505b5d6f1b2edb812590ff66875a78
 Priority: optional
 Homepage: https://github.com/emacs-eask/cli
 Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
