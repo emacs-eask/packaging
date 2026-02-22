@@ -1,6 +1,6 @@
 @echo off
 
-SET VER=0.12.8
+SET VER=0.12.9
 
 choco pack
 
