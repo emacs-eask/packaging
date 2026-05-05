@@ -648,10 +648,10 @@ Architecture: arm64
 Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
 Installed-Size: 16528659
 Filename: ./eask_0.12.9_arm64.deb
-Size: 19841788
-MD5sum: 75961c5569d353e41097e1468f35c876
-SHA1: 772ae73675db676f7f6b88eedc7ecb7357ab7a76
-SHA256: e497817770ae4d3cfede43a7984e50f9931b5c04ec736ce6fb857df84b08c40a
+Size: 19841858
+MD5sum: 16a6c1f015ad1b53d1313a2486fba772
+SHA1: 964969ef8dfa66b99ee41ba6d500a72a178a86d2
+SHA256: c65edf9c08921a431286476314d4c56def27c120c949cc98d390aaeb24facd76
 Priority: optional
 Homepage: https://github.com/emacs-eask/cli
 Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
@@ -662,10 +662,10 @@ Architecture: amd64
 Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
 Installed-Size: 16918026
 Filename: ./eask_0.12.9_amd64.deb
-Size: 20095878
-MD5sum: b192050170350bb48219bf72c71bace1
-SHA1: 2928380d4fc221ef2ed9a2cb94368f8dc7581102
-SHA256: 1aff55738e95ce4b80b20222cbbb3a053db8c65e329e176974ce42b6c2cc472b
+Size: 20096272
+MD5sum: a9c3014a5f652a28e233bf0d906b82db
+SHA1: 251cc8f0336fd3c306e8d6a0eac0d8d1b06367e9
+SHA256: dbcee3ce2d52c4440c9b8a0d27c7f69c2efd15812e9f5f865224ef8522989197
 Priority: optional
 Homepage: https://github.com/emacs-eask/cli
 Description: CLI for building, runing, testing, and managing your Emacs Lisp dependencies
