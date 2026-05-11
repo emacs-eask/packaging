@@ -95,6 +95,7 @@ This repository records Eask CLI's status to each package manager.
 > https://aur.archlinux.org/packages/eask-cli-git
 
 [![AUR Version](https://img.shields.io/aur/version/eask-cli-git?logo=archlinux)](https://aur.archlinux.org/packages/eask-cli-git)
+[![AUR Version](https://img.shields.io/aur/version/eask-cli-bin?logo=archlinux)](https://aur.archlinux.org/packages/eask-cli-bin)
 
 #### 🧪 Chocolatey (Windows)
 > https://community.chocolatey.org/packages/eask-cli
