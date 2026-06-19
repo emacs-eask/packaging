@@ -25,7 +25,7 @@ jobs:
     - name: Install MacPorts
       uses: melusina-org/setup-macports@v1.1.6
 
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         fetch-depth: 1
@@ -35,7 +35,7 @@ jobs:
         cp ./macports/Portfile ~/
 
     - name: Checkout MacPorts
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         repository: 'macports/macports-ports'
 
